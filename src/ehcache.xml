@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd"
+         updateCheck="false" monitoring="autodetect"
+         dynamicConfig="true">
+         
+	<diskStore path="java.io.tmpdir"/>
+
+	<defaultCache
+			maxEntriesLocalHeap="10000"
+			eternal="false"
+			timeToIdleSeconds="180"
+			timeToLiveSeconds="180"
+			diskSpoolBufferSizeMB="30"
+			maxEntriesLocalDisk="10000000"
+			diskExpiryThreadIntervalSeconds="120"
+			memoryStoreEvictionPolicy="LRU"
+			statistics="false">
+	</defaultCache>
+	
+	
+	<cache name="phoneCode"
+		   maxEntriesLocalHeap="10000"
+		   eternal="false"
+		   timeToIdleSeconds="180"
+           timeToLiveSeconds="180"
+           overflowToDisk="false">
+    </cache>
+		
+	<cache name="emailCode"
+		   maxEntriesLocalHeap="10000"
+		   eternal="false"
+		   timeToIdleSeconds="180"
+           timeToLiveSeconds="180"
+           overflowToDisk="false">
+    </cache>
+    
+    <cache name="valiCode"
+		   maxEntriesLocalHeap="10000"
+		   eternal="false"
+		   timeToIdleSeconds="300"
+           timeToLiveSeconds="300"
+           overflowToDisk="false">
+    </cache>
+
+
+</ehcache>
