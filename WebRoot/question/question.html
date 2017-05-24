@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+	<title>认知训练平台</title>
+
+	<!-- Bootstrap -->
+	<link href="${basePath!}/assets/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="${basePath!}/assets/css/home.css">
+	
+</head>
+<body style="background-color: #eee">
+	
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand cog-brand" href="${basePath}/home">CogTraining</a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav hidden">
+					<li class="active"><a href="#">主页 <span class="sr-only">(current)</span></a></li>
+					<li><a href="#">个人数据</a></li>
+					<li><a href="#">游戏</a></li>
+				</ul>
+				
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle cog-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+							<img src="${basePath!}/resources/images/common/small.png" class="img-rounded" 
+							id="user_img">
+							${(session["userInfo"].userName)!}<span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li class="hidden"><a href="#" >账户设置</a></li>
+							<li class="hidden"><a href="#">订购</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="${basePath!}/logout">退出登录</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div><!-- /.navbar-collapse -->
+		</div><!-- /.container-fluid -->
+	</nav>
+
+
+
+	<div class="main-content">
+		<div id="part-1">
+			<div class="container" style="width: 100%">
+
+
+				<div class="col-xs-12 cols">
+					<div class="part-left col-xs-12 cols" id="part-1-1">
+						<div class="panel panel-default">
+							<div class="panel-body" style="text-align: left;">
+								
+								<div class="row part-1-1-title">
+									<h3>丰富你的信息，让我们更了解你</h3>
+								</div>
+
+								<div class="row">
+									<form action="${basePath}/question/save" method="post" style="max-width: 500px;margin: 40px auto;padding: 0 10px">
+										<div class="row">
+											<div class="col-xs-2">
+												<h4>性别</h4>
+											</div>
+											<div class="col-xs-10">
+												<div class="checkbox">
+													<label>
+														<input type="radio" name="gender" class="form-check" id="inlineRadio1" 
+															value="0" onclick="checkform()">男
+													</label>
+												</div>
+												<div class="checkbox">
+													<label>
+														<input type="radio" name="gender" class="form-check" id="inlineRadio1" 
+															value="1" onclick="checkform()">女
+													</label>
+												</div>
+											</div>
+										</div>
+										<div class="row" style="margin-top: 30px">
+											<div class="col-xs-2">
+											    <h4>学历</h4>
+											</div>
+											<div class="col-xs-10">
+												<div class="checkbox">
+													<label>
+														<select class="form-control form-check" name="education_level" onclick="checkform()">
+															<option value="0">-</option>
+															<option value="1">小学生</option>
+															<option value="2">初中生</option>
+															<option value="3">高中生</option>
+															<option value="4">专科生</option>
+															<option value="5">本科生</option>
+															<option value="6">硕士生</option>
+															<option value="7">博士生</option>
+															<option value="9">其他</option>
+														</select>
+													</label>
+											    </div>
+										    </div>
+										</div>
+										<div class="row" style="margin-top: 30px">
+											<div class="col-xs-2">
+												<h4>职业</h4>
+											</div>
+											<div class="col-xs-10">
+												<div class="checkbox">
+												<label>
+													<select class="form-control form-check" name="occupation" onclick="checkform()">
+														<option value="0">-</option>
+														<option value="1">学生</option>
+														<option value="2">教师</option>
+														<option value="3">行政</option>
+														<option value="4">设计师</option>
+														<option value="5">工程师</option>
+														<option value="6">服务业</option>
+														<option value="7">销售</option>
+														<option value="8">医生</option>
+														<option value="9">其他</option>
+
+													</select>
+												</label>
+												</div>
+											</div>
+										</div>
+										<div class="row" id="btn-start-row">
+											<button class="btn btn-primary btn-lg center-block" id="btn-submit" disabled>下一步</button>
+										</div>
+									</form>
+								</div>
+
+							</div>
+
+						</div>
+					</div>
+
+					
+				</div>
+			</div>
+		</div>
+
+
+		<#include "/common/bottom.html">
+
+	</div>
+
+
+</body>
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="${basePath!}/assets/js/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="${basePath!}/assets/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+
+	window.onload=function(){
+		var s_height=$(window).height();
+		var navbar_height=$("#navbar").outerHeight();
+		$("#part-1").css("min-height",s_height-navbar_height-$("#part-6").outerHeight());
+		$("#part-1").css("margin-top",navbar_height);
+		$("form").css("min-height",0.5*(s_height-navbar_height-$("#part-6").outerHeight()));
+	}
+	function checkform(){
+		if ($("input:radio[name='gender']:checked").val()!=null && $(".form-check").eq(2).val()>0 && $(".form-check").eq(3).val()>0){
+			$("#btn-submit").removeAttr('disabled');
+		}
+	}
+</script>
+
+</body>
+</html>

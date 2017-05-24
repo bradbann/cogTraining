@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>订单中心</title>
+	<style type="text/css">
+		.content {
+        width:100%;
+        min-width:1200px;
+        height:660px;
+        background-color:#fff;      
+    }
+    .alipayform {
+        width:800px;
+        margin:0 auto;
+        height:600px;
+        border:1px solid #0ae
+    }
+    .element {
+        width:600px;
+        height:80px;
+        margin-left:100px;
+        font-size:20px
+    }
+    .etitle {
+        width:150px;
+        line-height:26px;
+        text-align:right
+    }
+    .einput {
+        width:200px;
+        margin-left:20px
+    }
+    .mark {
+        margin-top: 10px;
+        width:500px;
+        height:30px;
+        margin-left:80px;
+        line-height:30px;
+        font-size:12px;
+        color:#999
+    }
+
+
+	</style>
+</head>
+<body>
+
+<div class="content">
+        <form action="${basePath}/alipayapi" class="alipayform" method="POST" target="_blank">
+            <div class="element" style="margin-top:60px;">
+                <div class="legend">支付宝即时到账交易接口快速通道 </div>
+            </div>
+            <div class="element">
+                <div class="etitle">商户订单号:</div>
+                <div class="einput"><input type="text" name="WIDout_trade_no" id="out_trade_no"></div>
+                <br>
+                <div class="mark">注意：商户订单号(out_trade_no).必填(建议是英文字母和数字,不能含有特殊字符)</div>
+            </div>
+            
+            <div class="element">
+                <div class="etitle">商品名称:</div>
+                <div class="einput"><input type="text" name="WIDsubject" value="test商品123"></div>
+                <br>
+                <div class="mark">注意：产品名称(subject)，必填(建议中文，英文，数字，不能含有特殊字符)</div>
+            </div>
+            <div class="element">
+                <div class="etitle">付款金额:</div>
+                <div class="einput"><input type="text" name="WIDtotal_fee" value="0.01"></div>
+                <br>
+                <div class="mark">注意：付款金额(total_fee)，必填(格式如：1.00,请精确到分)</div>
+            </div>
+			<div class="element">
+                <div class="etitle">商品描述:</div>
+                <div class="einput"><input type="text" name="WIDbody" value="即时到账测试"></div>
+                <br>
+                <div class="mark">注意：商品描述(body)，选填(建议中文，英文，数字，不能含有特殊字符)</div>
+            </div>
+            <div class="element">
+                <input type="submit" class="alisubmit" value ="确认支付">
+            </div>
+        </form>
+    </div>
+	
+</body>
+</html>

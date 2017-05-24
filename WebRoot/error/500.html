@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+	<title>认知训练平台</title>
+
+	<!-- Bootstrap -->
+	<link href="${basePath}/assets/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="${basePath}/assets/css/cog.css">
+
+	
+</head>
+<body>
+	<nav class="navbar navbar-default navbar-fixed-top" id="navbar">
+		<div class="container-fluid" id="navbar-content">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="${basePath}/index" id="navbar-brand-text">CogTraining</a>
+			</div>
+		</div>
+	</nav>
+
+	<!--main content-->
+	<div id="main-content">
+		<div id="part-1" style="background: none;">
+			<div class="container text-center" id="about-part-1-inner">
+				<h1>哎哟!</h1>
+				<h2>500</h2>
+				<h2>看起来好像出了什么问题，服务器程序运行失败</h2>
+			</div>
+		</div>
+
+		
+
+
+		<#include "/common/bottom.html">
+
+	</div>
+	<!--main content-->
+
+
+
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="${basePath}/assets/js/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="${basePath}/assets/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		window.onload=function(){
+			var s_height=$(window).height();
+			var navbar_height=$("#navbar").outerHeight();
+			// $("#part-1").height(s_height-navbar_height);
+			$("#part-1").css("margin-top",navbar_height);
+  			// $("#part-2").css("min-height",(s_height-navbar_height)+"px");
+  			
+  			
+  		}
+  		
+
+
+  	</script>
+  </body>
+  </html>

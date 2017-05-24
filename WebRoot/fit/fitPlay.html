@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+	<title>认知训练平台</title>
+
+	<!-- Bootstrap -->
+	<link href="${basePath!}/assets/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="${basePath!}/assets/css/gameplay.css">
+	
+</head>
+<body style="background-color: #eee">
+	
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand cog-brand" href="#">CogTraining</a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li><a href="${basePath!}/home">主页</a></li>
+					<li><a href="${basePath!}/brain_profile">个人数据</a></li>
+					<li><a href="${basePath!}/games">游戏<span class="sr-only">(current)</span></a></li>
+				</ul>
+				
+				<#include "/common/account_nav.html">
+			</div><!-- /.navbar-collapse -->
+		</div><!-- /.container-fluid -->
+	</nav>
+
+
+
+	<div class="main-content">
+		<div id="part-1">
+			<div class="container" style="width: 100%;margin-top: 50px;">
+
+				<div class="col-xs-12 cols">
+					<div class="col-xs-3">
+						<div class="panel panel-default">
+							<div class="panel-body">
+								<h4 class="txt-center">你的适应性训练游戏</h4>
+								<div class="row" id="turbo-box" style="text-align: left">
+									<div class="row">
+										<h5 style="padding-left:30px"><small style="margin: 0 10px">
+										<span class="glyphicon glyphicon-triangle-right" aria-hidden="true" style="opacity: 0"></span></small>1.速度训练</h5>
+									</div>
+									<div class="row">
+										<h5 style="padding-left:30px"><small style="margin: 0 10px"><span class="glyphicon glyphicon-triangle-right" aria-hidden="true" style="opacity: 0"></span></small>2.注意训练</h5>
+									</div>
+									<div class="row">
+										<h5 style="padding-left:30px"><small style="margin: 0 10px"><span class="glyphicon glyphicon-triangle-right" aria-hidden="true" style="opacity: 0"></span></small>3.记忆训练</h5>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-8" id="part-left">
+						
+						<div class="panel panel-default">
+							<div class="panel-body turbo-panel">
+								<!-- game-box为游戏时界面 result-box为游戏结果界面 切换请使用样式名hidden -->
+								<div id="game-loading-box" class="col-xs-12 ">
+									<h2 style="text-align: center;margin-top: 20%">游戏正在加载中，请稍后</h2>
+									<img src="${basePath}/assets/img/game-loading.png" id="game-loading-img" class="game-loading-ani center-block" style="margin-top: 10%">
+								</div>
+
+								<div id="game-box" class="turbo-game-box hidden">
+									<canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" height="480px" width="640px" style="height:480px;width:640px"></canvas>
+									
+									<script type='text/javascript'>
+									  var Module = {
+									    TOTAL_MEMORY: 268435456,
+									    errorhandler: null,			
+									    compatibilitycheck: null,
+									    backgroundColor: "#222C36",
+									    splashStyle: "Light",
+									    dataUrl: "${basePath!}/resources/game_re/${game.pathName!}/${game.pathName!}.data",
+									    codeUrl: "${basePath!}/resources/game_re/${game.pathName!}/${game.pathName!}.js",
+									    asmUrl: "${basePath!}/resources/game_re/${game.pathName!}/${game.pathName!}.asm.js",
+									    memUrl: "${basePath!}/resources/game_re/${game.pathName!}/${game.pathName!}.mem",
+									  };
+									</script>
+									<script src="${basePath!}/resources/game_re/${game.pathName!}/UnityLoader.js"></script>
+									
+								</div>
+
+								<div id="result-box" class="col-xs-12 hidden">
+									
+								</div>
+							</div>
+						</div>
+					</div>
+					
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<#include "/common/bottom.html">
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="${basePath!}/assets/js/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="${basePath!}/assets/js/bootstrap.min.js"></script>
+	<!-- <script type="text/javascript" src="${basePath!}/assets/js/Chart.js"></script> -->
+
+	<script type="text/javascript">
+
+		window.onload=function(){
+			var s_height=$(window).height();
+			var navbar_height=$("#navbar").outerHeight();
+			$("#part-1").css("min-height",s_height-navbar_height-$("#part-6").outerHeight());
+			$("#part-1").css("margin-top",navbar_height);
+
+			}
+			function unityReady(){
+				$("#game-loading-box").addClass('hidden');
+				$("#game-box").removeClass('hidden');
+			    console.log("Ready");
+			    SendMessage ('Ctrl', 'load_data', '${jsonStr!}');
+			}
+			function game_over(str){
+				
+			  	var dc = {};
+			  	dc.result = str;
+			  	dc.sequence = ${sequence!};
+			  	dc.gameId = ${(game.gameId)!};
+			  	dc.gameClassId = ${game.gameClassId!};
+			  	
+			    $.ajax({
+			    	url: '${basePath}/fitTest/save',
+			    	type: 'POST',
+			    	dataType: 'text',
+			    	data: dc,
+			    	success:function(data){
+			    		
+			    		$("#game-box").addClass('hidden');
+			    		$("#result-box").removeClass('hidden');
+			    		$("#result-box").html(data);
+			    		// location.reload();
+
+			    	},
+			    	error:function(){
+			    		console.log("error");
+			    	}
+			    });
+				
+			}
+			function unity_no_data(){
+				alert("No Data Recieved!");
+			}
+			
+			$(document).ready(function() {
+			var sequence = ${sequence};
+			$("#turbo-box span").eq(${sequence-1}).attr('style', 'opacity: 1');
+		});
+
+	</script>
+</body>
+</html>

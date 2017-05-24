@@ -1,0 +1,31 @@
+<h2>${msg!"游戏已完成"}</h2>
+<a href="${basePath!}/games/play/${game.gameFileName!}" rel="nofollow">
+	<h5 class="replay">再玩一次</h5>
+</a>
+
+<div class="col-xs-7">
+	<h3>${game.gameName!}</h3>
+	<div class="row">
+		<div class="col-xs-6">
+			<h2><small>您的得分</small></h2>
+			<h2><small>您所获得的CPI</small></h2>
+		</div>
+		<div class="col-xs-6">
+			<h2 class="game-score">${score!}</h2>
+			<h2 class="game-score"><small>${LPI!}</small></h2>
+		</div>
+	</div>
+	
+</div>
+<div class="col-xs-5" id="ranks">
+	<h4>您的最高分</h4>
+	<#list histories as history>
+		<h4>
+			<small>
+				<a1>${history_index + 1}</a1>
+				<a2>${history.score}</a2>
+				<a3>${history.playDate}</a3>
+			</small>
+		</h4>
+	</#list>
+</div>

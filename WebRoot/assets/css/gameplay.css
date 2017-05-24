@@ -1,0 +1,290 @@
+body{
+	font-family: "Museo Sans","Lucida Grande",Arial,sans-serif;
+	color: #333;
+}
+a,a:hover,a:active{
+	text-decoration: none;
+}
+.cols{
+	padding: 0;
+	/*text-align: center;*/
+}
+.rows{
+	margin: 0;
+}
+.txt-center{
+	text-align: center;
+}
+.navbar{
+	background-color: #0e91a1;
+	min-height: 70px;
+	border-radius: 0;
+	border: none;
+}
+.navbar > .container-fluid{
+	max-width: 988px;
+	margin: 10px auto;
+}
+.cog-brand{
+	color: white;
+}
+.navbar-collapse{
+	border: none;
+}
+.navbar-nav, .navbar-nav > li{
+	min-width: 80px;
+	text-align:center;
+}
+.navbar-nav > .active >a{
+	border-radius: 5px;
+	margin-top:5px;
+	margin-bottom: 5px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.navbar-right{
+	margin: -10px auto;
+}
+#user_img{
+	width: 40px;
+	height: 100%;
+}
+.dropdown-menu,.dropdown-menu>li>a{
+	text-align: center;
+	color: #146c78;
+}
+.dropdown-menu >li{
+	margin: 10px auto
+}
+
+#part-1{
+	max-width: 988px;
+	margin: 0 auto;
+}
+
+#part-1-1{
+
+}
+.panel-heading{
+	background-color: none;
+	min-height: 80px;
+	padding: 0;
+}
+.panel-heading > div,.panel-heading > div > div{
+	height: 100%;
+}
+
+.part-1-1-title{
+	margin: 10px 0;
+	text-align: center;
+}
+
+#btn-start-row{
+	margin: 10px auto;
+}
+.panel-footer{
+	min-height: 50px
+}
+.panel-footer > p{
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+.bluea,.bluea:hover,.bluea:active{
+	color: #0e91a1;
+	text-decoration: none;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+.panel-footer-right{
+	text-align: center;
+}
+
+
+
+/*games_play*/
+
+#game-box,#result-box,#game-loading-box{
+	width: 640px;
+	height: 480px;
+}
+
+#game-loading-img{
+	width: 10%;
+}
+
+.game-loading-ani{
+	animation:myfirst infinite 2s linear;
+	-moz-animation:myfirst infinite 2s linear; /* Firefox */
+	-webkit-animation:myfirst infinite 2s linear; /* Safari and Chrome */
+	-o-animation:myfirst infinite 2s linear; /* Opera */
+}
+
+@keyframes myfirst
+{
+	0%   {transform:rotate(0deg);}
+	
+	100% {transform:rotate(360deg);}
+}
+
+@-moz-keyframes myfirst /* Firefox */
+{
+	0%   {transform:rotate(0deg);}
+	
+	100% {transform:rotate(360deg);}
+}
+
+@-webkit-keyframes myfirst /* Safari and Chrome */
+{
+	0%   {transform:rotate(0deg);}
+	
+	100% {transform:rotate(360deg);}
+}
+
+@-o-keyframes myfirst /* Opera */
+{
+	0%   {transform:rotate(0deg);}
+	
+	100% {transform:rotate(360deg);}
+}
+
+.divider{
+	border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+.game-score, .replay{
+	color: #0e91a1;
+}
+#result-box > h2{
+	padding-left: 10px;
+}
+#result-box > h3{
+	padding-left: 40px;
+}
+
+#part-left{
+	width: auto;
+}
+a1{
+	color: black;
+}
+a2{
+	color: #0e91a1;
+	margin: 0 20px;
+}
+a3{
+	color: black;
+}
+#ranks{
+	background-color: #e1f4f3;
+}
+.replay{
+	position: absolute;
+	bottom: 0px;
+}
+
+/*games_play*/
+
+/*turbo*/
+svg{
+	width: 100%;
+	margin: 10px;
+}
+#turbo-box{
+	text-align: center;
+}
+#turbo{
+	width: 80%;
+	margin: 10px auto;
+}
+#game-img-wide-box{
+	min-height: 240px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+}
+.turbo-panel{
+	padding: 0;
+}
+.turbo-game-name{
+	position: absolute;
+	bottom: 0px;
+	height: 120px;
+	width: 100%;
+	background-color: rgba(0,0,0,0.5);
+	padding: 20px;
+}
+.turbo-game-name>h3{
+	color: rgba(255,255,255,0.8);
+}
+.turbo-game-name>button{
+	background-color: rgba(0,0,0,0.5);
+	color: rgba(255,255,255,0.8);	
+}
+#turbo-best-score-box{
+	background-color: #eee;
+	padding: 10px;
+}
+#turbo-btn-next{
+	margin: 30px 0;
+}
+/*turbo*/
+
+/*turbo-play*/
+#game-img-wide-short-box{
+	min-height: 120px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+}
+.turbo-game-box{
+	margin: 15px
+}
+.turbo-game-play-name{
+	position: absolute;
+	bottom: 0px;
+	height: 120px;
+	width: 100%;
+	background-color: rgba(0,0,0,0.5);
+	padding: 20px;
+}
+.turbo-game-play-name>h3{
+	color: rgba(255,255,255,0.8);
+}
+.turbo-game-play-name>h4{
+	
+	color: rgba(255,255,255,0.8);	
+}
+#turbo-play-rank{
+	padding: 10px;
+	text-align: center;
+}
+#turbo-next{
+	margin: 30px;
+}
+.glyphicon-repeat{
+	margin: 0 10px
+}
+
+/*turbo-play*/
+
+ 
+#part-6{
+	background-color: #146c78;
+	min-height: 200px;
+	padding-top: 30px;
+}
+#part-6-inner{
+	max-width: 400px;
+	margin: 0 auto;
+}
+.part-6-inner-a,.part-6-inner-a:hover,.part-6-inner-a:active{
+	color: white;
+	text-align: center;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+
+
+

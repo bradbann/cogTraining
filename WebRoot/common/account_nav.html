@@ -1,0 +1,14 @@
+<ul class="nav navbar-nav navbar-right">
+	<li class="dropdown">
+		<a href="#" class="dropdown-toggle cog-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+			<img src="${basePath!}/resources/images/common/small.png" class="img-rounded" id="user_img">
+			${(session["userInfo"].userName)!} <span class="caret"></span>
+		</a>
+		<ul class="dropdown-menu">
+			<li><a href="${basePath!}/settings">账户设置</a></li>
+			<#--<li><a href="${basePath!}/order">订购</a></li>-->
+			<li role="separator" class="divider"></li>
+			<li><a href="${basePath!}/logout">退出登录</a></li>
+		</ul>
+	</li>
+</ul>

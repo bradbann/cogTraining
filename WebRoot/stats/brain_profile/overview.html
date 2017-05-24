@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+	<title>认知训练平台</title>
+
+	<!-- Bootstrap -->
+	<link href="assets/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="assets/css/home.css">
+	
+	
+</head>
+<body style="background-color: #eee">
+	
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand cog-brand" href="${basePath!}/home">CogTraining</a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li><a href="${basePath!}/home">主页</a></li>
+					<li class="active"><a href="${basePath!}/brain_profile">个人数据 <span class="sr-only">(current)</span></a></li>
+					<li><a href="${basePath!}/games">游戏</a></li>
+				</ul>
+				
+				<#include "/common/account_nav.html">
+			</div><!-- /.navbar-collapse -->
+		</div><!-- /.container-fluid -->
+	</nav>
+
+
+
+	<div class="main-content">
+		<div id="part-1">
+			<div class="container" style="width: 100%">
+
+				<div class="col-xs-12 cols">
+					<div class="part-left hidden-sm hidden-xs col-md-2" id="part-1-1">
+						<div class="list-group">
+							<a href="${basePath!}/brain_profile" class="list-group-item active">
+								概述
+							</a>
+							<a href="${basePath!}/training_history/summaries" class="list-group-item">训练历史</a>
+							<a href="${basePath!}/comparison" class="list-group-item">比较情况</a>
+						</div>
+					</div>
+					<div class="dropdown visible-sm visible-xs pull-left">
+						<a class="btn btn-cog dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+							概述
+							<span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+							<li><a href="${basePath!}/brain_profile">概述</a></li>
+							<li><a href="${basePath!}/training_history/summaries">训练历史</a></li>
+							<li><a href="${basePath!}/comparison">比较情况</a></li>
+						</ul>
+					</div>
+
+					<div class="part-right col-xs-12 col-md-10">
+
+						<div class="row">
+							<div class="col-xs-12">
+								<div class="panel panel-default">
+
+									<div class="panel-body">
+										<div class="row">
+											<div class="col-xs-12">
+												<h2>总览</h2>
+											</div>
+											
+										</div>
+
+										<div class="row">
+											<div class="col-xs-12 col-sm-8">
+												<div id="charts" class="brain-profile-charts">
+													<div class="row">
+														<div class="col-xs-5">
+															<h5 class="chart-h5"><strong>最好的CPI</strong></h5>
+														</div>
+														<div class="col-xs-7">
+															<div class="chart-bar" id="bestcpi"><h5 class="chart-h5"></h5></div>
+														</div>
+													</div>
+													<div class="row">
+														<div class="col-xs-5">
+															<h5 class="chart-h5"><strong>现在的CPI</strong></h5>
+														</div>
+														<div class="col-xs-7">
+															<div class="chart-bar" id="currentcpi"><h5 class="chart-h5"></h5></div>
+														</div>
+													</div>
+													<div class="row" style="min-height: 10px"></div>
+													<div class="row">
+														<div class="col-xs-5">
+															<h5 class="chart-h5">速度训练</h5>
+														</div>
+														<div class="col-xs-7">
+															<div class="chart-bar" id="scpi"><h5 class="chart-h5"></h5></div>
+														</div>
+													</div>
+													<div class="row">
+														<div class="col-xs-5">
+															<h5 class="chart-h5">记忆训练</h5>
+														</div>
+														<div class="col-xs-7">
+															<div class="chart-bar" id="mcpi"><h5 class="chart-h5"></h5></div>
+														</div>
+													</div>
+													<div class="row">
+														<div class="col-xs-5">
+															<h5 class="chart-h5">注意训练</h5>
+														</div>
+														<div class="col-xs-7">
+															<div class="chart-bar" id="acpi"><h5 class="chart-h5"></h5></div>
+														</div>
+													</div>
+													<div class="row">
+														<div class="col-xs-5">
+															<h5 class="chart-h5">灵活训练</h5>
+														</div>
+														<div class="col-xs-7">
+															<div class="chart-bar" id="fcpi"><h5 class="chart-h5"></h5></div>
+														</div>
+													</div>
+													<div class="row">
+														<div class="col-xs-5">
+															<h5 class="chart-h5">逻辑训练</h5>
+														</div>
+														<div class="col-xs-7">
+															<div class="chart-bar" id="pcpi"><h5 class="chart-h5"></h5></div>
+														</div>
+													</div>
+													<div class="row">
+														<div class="col-xs-5"></div>
+														<div class="col-xs-7">
+															<div class="chart-bar">
+															<a href="${basePath!}/comparison">
+																<h5 class="chart-h5 bluea" id="brain-profile-compare-a" style="margin: 5px 0;">查看你跟其他人的比较 →
+																</h5>
+															</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-sm-4">
+												<div class="row">
+													<div class="col-xs-12" id="cpi-info">
+														<h5>什么是CPI？</h5>
+														<h5>脑力训练指数(CPI)是根据你游戏的得分计算而来的。通过挑战你不同认知能力的游戏，CPI帮助你比较你的强弱点。</h5>
+														<h5>你认知领域的CPI是从你最近的游戏CPI的平均数得来的。你总体上的CPI是从所有的游戏CPI的平均数得来的。</h5>
+													</div>
+												</div>
+											</div>
+										</div>
+										
+										<div class="row" id="divider">
+											<div class="col-xs-12 col-sm-8">
+												<div>
+													<div class="row">
+														<div class="col-xs-5">
+															<h4 class="chart-h5"><strong>CPI最高的训练</strong></h4>
+														</div>
+														<div class="col-xs-7">
+															<div class="chart-bar" >
+																<h4 class="chart-h5">
+																	<small>${first!"请玩一个游戏来解锁！"}</small> 
+																	<small>${second!}</small>
+																</h5>
+															</div>
+														</div>
+													</div>
+													
+												</div>
+											</div>
+										</div>
+
+										<div class="row">
+											<div class="col-xs-12 col-sm-8">
+												<div>
+													<div class="row">
+														<div class="col-sm-5">
+															<h4 class="chart-h5"><strong>我的训练历史</strong></h4>
+														</div>
+														<div class="col-sm-7">
+															<div class="row">
+																<canvas id="chart1" height="200" class="col-xs-12" />
+															</div>
+															<div class="row">
+																<div class="chart-bar">
+																	<div class="row">
+																		<a href="${basePath}/training_history/summaries">
+																		<h5 class="chart-h5 bluea" id="brain-profile-compare-a" style="margin: 5px 0;">
+																		查看的训练历史 →</h5>
+																	</div>
+																
+																</div>
+															</div>
+														</div>
+													</div>
+													
+												</div>
+											</div>
+											<div class="col-xs-12 col-sm-4">
+												<div class="col-xs-12">
+													<h5>过去四周的CPI</h5>
+												</div>
+											</div>
+										</div>
+
+									</div>
+									
+									
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<#include "/common/bottom.html">
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="assets/js/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="${basePath}/resources/js/echarts.min.js"></script>
+<script type="text/javascript" src="assets/js/Chart.js"></script>
+
+<script type="text/javascript">
+
+	window.onload=function(){
+		var s_height=$(window).height();
+		var navbar_height=$("#navbar").outerHeight();
+		$("#part-1").css("min-height",s_height-navbar_height-$("#part-6").outerHeight());
+		$("#part-1").css("margin-top",navbar_height);
+
+
+		var bestcpi=${bestLPI!};
+		var currentcpi=${overall!};
+		var scpi=${speed!};
+		var mcpi=${memory!};
+		var acpi=${attention!};
+		var fcpi=${flexibility!};
+		var pcpi=${problem_solving!};
+		//数据初始化
+		// $("#bestcpi").css("min-width",($("#bestcpi").parent().width())*bestcpi/2000+"px");
+		$("#bestcpi").css("width",currentcpi/20+"%");
+		$("#bestcpi").find("h5").html(bestcpi);
+		$("#currentcpi").css("width",currentcpi/20+"%");
+		$("#currentcpi").find("h5").html(currentcpi);
+		$("#scpi").css("width",scpi/20+"%");
+		$("#scpi").find("h5").html(scpi);
+		$("#mcpi").css("width",mcpi/20+"%");
+		$("#mcpi").find("h5").html(mcpi);
+		$("#acpi").css("width",acpi/20+"%");
+		$("#acpi").find("h5").html(acpi);
+		$("#fcpi").css("width",fcpi/20+"%");
+		$("#fcpi").find("h5").html(fcpi);
+		$("#pcpi").css("width",pcpi/20+"%");
+		$("#pcpi").find("h5").html(pcpi);
+
+
+		//图表
+		var ctx1 = document.getElementById("chart1").getContext("2d");
+		window.myLine = new Chart(ctx1).Line(lineChartData, {
+			showScale: false,
+			pointDot : true,
+			responsive: false,
+			scaleSteps:10,
+			scaleStepWidth:200,
+			scaleOverride : true,
+
+		});
+	}
+	$("#carousel-example-generic").carousel({
+		interval:false
+	})
+
+</script>
+<script>
+	Chart.defaults.global.pointHitDetectionRadius = 1;
+	Chart.defaults.global.customTooltips = function(tooltip) {
+
+		var tooltipEl = $('#chartjs-tooltip');
+
+		if (!tooltip) {
+			tooltipEl.css({
+				opacity: 0
+			});
+			return;
+		}
+
+		tooltipEl.removeClass('above below');
+		tooltipEl.addClass(tooltip.yAlign);
+
+		var innerHtml = '';
+		// for (var i = tooltip.labels.length - 1; i >= 0; i--) {
+		// 	innerHtml += [
+		// 	'<div class="chartjs-tooltip-section">',
+		// 	'	<span class="chartjs-tooltip-key" style="background-color:' + tooltip.legendColors[i].fill + '"></span>',
+		// 	'	<span class="chartjs-tooltip-value">' + tooltip.labels[i] + '</span>',
+		// 	'</div>'
+		// 	].join('');
+		// }
+		tooltipEl.html(innerHtml);
+
+		tooltipEl.css({
+			opacity: 1,
+			left: tooltip.chart.canvas.offsetLeft + tooltip.x + 'px',
+			top: tooltip.chart.canvas.offsetTop + tooltip.y + 'px',
+			fontFamily: tooltip.fontFamily,
+			fontSize: tooltip.fontSize,
+			fontStyle: tooltip.fontStyle,
+		});
+	};
+	var randomScalingFactor = function() {
+		return Math.round(Math.random() * 100);
+	};
+	var lineChartData = {
+		labels:  ${fourWeeksLPI!},
+		datasets: [{
+			label: "CPI",
+			fillColor: "rgba(220,220,220,0)",
+			strokeColor: "#4dbcb6",
+			pointColor: "rgba(220,220,220,0.1)",
+			pointStrokeColor: "rgba(220,220,220,0.1)",
+			pointHighlightFill: "rgba(220,220,220,0.1)",
+			pointHighlightStroke: "rgba(220,220,220,0.1)",
+			data: ${fourWeeksLPI!}
+		}]
+	};
+
+
+</script>
+</body>
+</html>

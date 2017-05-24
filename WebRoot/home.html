@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+	<title>认知训练平台</title>
+
+	<!-- Bootstrap -->
+	<link href="assets/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="assets/css/home.css">
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="assets/js/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="assets/js/bootstrap.min.js"></script>
+	
+</head>
+<body style="background-color: #eee">
+	
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand cog-brand" href="${basePath!}/home">CogTraining</a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="${basePath!}/home">主页 <span class="sr-only">(current)</span></a></li>
+					<li><a href="${basePath!}/brain_profile">个人数据</a></li>
+					<li><a href="${basePath!}/games">游戏</a></li>
+				</ul>
+				
+				<#include "/common/account_nav.html">
+				
+			</div><!-- /.navbar-collapse -->
+		</div><!-- /.container-fluid -->
+	</nav>
+
+
+
+	<div class="main-content">
+		<div id="part-1">
+			<div class="container" style="width: 100%">
+
+
+				<div class="col-xs-12 cols">
+					<div class="part-left col-xs-12 col-md-8" id="part-1-1">
+						<div class="panel panel-default">
+
+							<div class="panel-heading hidden-xs">
+								<div class="col-xs-12">
+									<div class="row">
+										<div
+										<#if trainPlan.week == 1>class="col-xs-1 col-days active-days"
+										<#else> class="col-xs-1 col-days"
+										</#if>>
+											星期日
+										</div>
+										<div
+										<#if trainPlan.week == 2>class="col-xs-1 col-days active-days"
+										<#else> class="col-xs-1 col-days"
+										</#if>>
+											星期一
+										</div>
+										<div
+										<#if trainPlan.week == 3>class="col-xs-1 col-days active-days"
+										<#else> class="col-xs-1 col-days"
+										</#if>>
+											星期二
+										</div>
+										<div
+										<#if trainPlan.week == 4>class="col-xs-1 col-days active-days"
+										<#else> class="col-xs-1 col-days"
+										</#if>>
+											星期三
+										</div>
+										<div
+										<#if trainPlan.week == 5>class="col-xs-1 col-days active-days"
+										<#else> class="col-xs-1 col-days"
+										</#if>>
+											星期四
+										</div>
+										<div
+										<#if trainPlan.week == 6>class="col-xs-1 col-days active-days"
+										<#else> class="col-xs-1 col-days"
+										</#if>>
+											星期五
+										</div>
+										<div
+										<#if trainPlan.week == 7>class="col-xs-1 col-days active-days"
+										<#else> class="col-xs-1 col-days"
+										</#if>>
+											星期六
+										</div>
+									</div>
+								</div>
+
+							</div>
+							<div class="panel-body">
+								<div class="col-xs-12">
+								<#if trainPlan.playTimes < 5>
+									<div class="row part-1-1-title">
+										<h3>选择今天的训练任务</h3>
+									</div>
+
+									<div class="row">
+										<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+											<!-- Wrapper for slides -->
+											<div class="carousel-inner" role="listbox" id="carousel">
+												<div class="item active">
+													<img src="assets/img/classic.png">
+													<h3>经典</h3>
+													<h3><small>根据你的训练偏好和习惯生成训练计划</small></h3>
+												</div>
+												<div class="item">
+													<img src="assets/img/favorite.png">
+													<h3>最喜爱的</h3>
+													<h3><small>选择你进行次数最多的训练</small></h3>
+												</div>
+												<div class="item">
+													<img src="assets/img/strengthen.png">
+													<h3>强化</h3>
+													<h3><small>选择你最不擅长的训练，提高训练分数</small></h3>
+												</div>
+												<div class="item">
+													<img src="assets/img/fast.png">
+													<h3>快速</h3>
+													<h3><small>进行时长更短的训练</small></h3>
+												</div>
+											</div>
+											<!-- Controls -->
+											<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+												<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+												<span class="sr-only">Previous</span>
+											</a>
+											<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+												<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+												<span class="sr-only">Next</span>
+											</a>
+										</div>
+									</div>
+
+									<div class="row" id="btn-start-row">
+										<a class="btn btn-primary btn-lg center-block" href="${basePath!}/train/turbo" style="max-width:100px;margin:0 auto">开始训练
+										</a>
+									</div>
+								<#else>
+									<div class="content">
+										<div class="complete">
+											<img alt="Complete" heigth="80" src="${basePath!}/resources/images/common/complete.png" width="80">
+										</div>
+										<div class="completed text">
+											<h3 class="black">
+											训练是一场马拉松，不是短跑比赛。<br>
+											明天继续来挑战你自己！
+											</h3>
+										</div>
+									</div>
+								</#if>
+
+								</div>
+							</div>
+
+							<div class="panel-footer">
+								<#--
+								<div class="col-xs-10">
+									<a href="${basePath!}/settings/reminder/edit"><h5 class="bluea text-left">训练提醒</h5></a>
+								</div>
+								-->
+								<div class="col-xs-1 pull-right">
+									<a href="${basePath!}/settings/training_preferences/edit"><h4 class="bluea"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span></h4></a>
+								</div>
+
+							</div>
+						</div>
+					</div>
+
+					<div class="part-right col-xs-12 col-md-4">
+						<div class="row">
+							<div class="col-xs-12">
+							
+								<div class="panel panel-default" id="my-training-calendar">
+										<!-- <script type="text/javascript">
+											$(document).ready(function() {
+												$.get('${basePath}/calendar', function(data) {
+													
+													$("#my-training-calendar").html(data);
+												});
+											});
+										</script> -->
+									
+									<div class="panel-body">
+										<div class="row">
+											<h3 class="txt-center">训练日历</h3>
+											<h3 class="txt-center"><small>至少玩了一个游戏的日期</small></h3>
+										</div>
+										<div class="row">
+											<div class="calendar row" id="training-history-calendar">
+												<div id="training-calendar" class="col-xs-12">
+												
+													<div class="week">
+														<div class="calenderhead firstday"><h5 class="txt-center">周日</h5></div>
+														<div class="calenderhead"><h5 class="txt-center">周一</h5></div>
+														<div class="calenderhead"><h5 class="txt-center">周二</h5></div>
+														<div class="calenderhead"><h5 class="txt-center">周三</h5></div>
+														<div class="calenderhead"><h5 class="txt-center">周四</h5></div>
+														<div class="calenderhead"><h5 class="txt-center">周五</h5></div>
+														<div class="calenderhead"><h5 class="txt-center">周六</h5></div>
+													</div>
+													<div class="week">
+														<div class="days firstday"></div>
+														<div class="days"></div>
+														<div class="days"></div>
+														<div class="days"></div>
+														<div class="days"></div>
+														<div class="days"></div>
+														<div class="days"></div>
+													</div>
+													<div class="week">
+														<div class="days firstday"></div>
+														<div class="days"></div>
+														<div class="days"></div>
+														<div class="days"></div>
+														<div class="days"></div>
+														<div class="days"></div>
+														<div class="days"></div>
+													</div>
+													<div class="week">
+														<div class="days firstday"></div>
+														<div class="days"></div>
+														<div class="days"></div>
+														<div class="days"></div>
+														<div class="days"></div>
+														<div class="days"></div>
+														<div class="days"></div>
+													</div>
+													<div class="week">
+														<div class="days firstday"></div>
+														<div class="days"></div>
+														<div class="days"></div>
+														<div class="days"></div>
+														<div class="days"></div>
+														<div class="days"></div>
+														<div class="days">
+															
+														</div>
+													</div>
+												
+												
+												</div>
+											</div>
+											<div class="row">
+												<h2 class="txt-center"><small>最近四周的游戏天数</small><o class="bluea">${totalPlayDay!0}</o></h2>
+											</div>
+										</div>
+										
+									</div>
+									<div class="panel-footer">
+										<a href="${basePath}/training_history/summaries"><h5 class="bluea panel-footer-right">查看你的训练历史</h5></a>
+									</div>
+									
+								</div>
+							</div>
+							
+							
+						</div>
+						<div class="row">
+							<div class="col-xs-12">
+								<div class="panel panel-default">
+
+									<div class="panel-body">
+										<div class="row">
+											<h3 class="txt-center">智力训练指数（CPI）</h3>
+										</div>
+
+										<div class="row">
+											<div class="col-xs-12">
+												<div  id="charts">
+													<div class="row">
+														<div class="col-xs-4" style="padding-right: 0">
+															<h5 class="chart-h5"><strong>最好的CPI</strong></h5>
+														</div>
+														<div class="col-xs-8">
+															<div class="chart-bar" id="bestcpi"><h5 class="chart-h5"></h5></div>
+														</div>
+													</div>
+													<div class="row">
+														<div class="col-xs-4" style="padding-right: 0">
+															<h5 class="chart-h5"><strong>现在的CPI</strong></h5>
+														</div>
+														<div class="col-xs-8">
+															<div class="chart-bar" id="currentcpi"><h5 class="chart-h5"></h5></div>
+														</div>
+													</div>
+													<div class="row" style="min-height: 10px"></div>
+													<div class="row">
+														<div class="col-xs-4">
+															<h5 class="chart-h5">速度训练</h5>
+														</div>
+														<div class="col-xs-8">
+															<div class="chart-bar" id="scpi"><h5 class="chart-h5"></h5></div>
+														</div>
+													</div>
+													<div class="row">
+														<div class="col-xs-4">
+															<h5 class="chart-h5">记忆训练</h5>
+														</div>
+														<div class="col-xs-8">
+															<div class="chart-bar" id="mcpi"><h5 class="chart-h5"></h5></div>
+														</div>
+													</div>
+													<div class="row">
+														<div class="col-xs-4">
+															<h5 class="chart-h5">注意训练</h5>
+														</div>
+														<div class="col-xs-8">
+															<div class="chart-bar" id="acpi"><h5 class="chart-h5"></h5></div>
+														</div>
+													</div>
+													<div class="row">
+														<div class="col-xs-4">
+															<h5 class="chart-h5">灵活训练</h5>
+														</div>
+														<div class="col-xs-8">
+															<div class="chart-bar" id="fcpi"><h5 class="chart-h5"></h5></div>
+														</div>
+													</div>
+													<div class="row">
+														<div class="col-xs-4">
+															<h5 class="chart-h5">逻辑训练</h5>
+														</div>
+														<div class="col-xs-8">
+															<div class="chart-bar" id="pcpi"><h5 class="chart-h5"></h5></div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+									</div>
+									
+									<div class="panel-footer">
+										<a href="${basePath}/brain_profile"><h5 class="bluea panel-footer-right">查看你的数据</h5></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<#include "/common/bottom.html">
+	</div>
+
+
+<script type="text/javascript">
+	window.onload=function(){
+		var s_height=$(window).height();
+		var navbar_height=$("#navbar").outerHeight();
+		$("#part-1").css("min-height",s_height-navbar_height-$("#part-6").outerHeight());
+		$("#part-1").css("margin-top",navbar_height);
+
+		var bestcpi=${bestLPI};
+		var currentcpi=${overall};
+		var scpi=${speed};
+		var mcpi=${memory};
+		var acpi=${attention};
+		var fcpi=${flexibility};
+		var pcpi=${problem_solving};
+
+		//数据初始化
+		//console.log($("#bestcpi").parent().width());
+		// $("#bestcpi").css("min-width",($("#bestcpi").parent().width())*bestcpi/2000+"px");
+		$("#bestcpi").css("width",bestcpi/20+"%");
+		$("#bestcpi").find("h5").html(bestcpi);
+		$("#currentcpi").css("width",currentcpi/20+"%");
+		$("#currentcpi").find("h5").html(currentcpi);
+		$("#scpi").css("width",scpi/20+"%");
+		$("#scpi").find("h5").html(scpi);
+		$("#mcpi").css("width",mcpi/20+"%");
+		$("#mcpi").find("h5").html(mcpi);
+		$("#acpi").css("width",acpi/20+"%");
+		$("#acpi").find("h5").html(acpi);
+		$("#fcpi").css("width",fcpi/20+"%");
+		$("#fcpi").find("h5").html(fcpi);
+		$("#pcpi").css("width",pcpi/20+"%");
+		$("#pcpi").find("h5").html(pcpi);
+		//日历初始化
+		var data_1=${dateStats};//状态 0 未到 1 完成  2 未完成
+		var data_2=${weeks!};//日期
+		for (var i = 0; i <28; i++) {
+			$(".days").eq(i).attr("date",data_2[i]);
+			if (data_1[i]==0) {
+				$(".days").eq(i).addClass("old");
+			}else if (data_1[i]==2) {
+				$(".days").eq(i).addClass("noplay");
+			}	
+		}
+		for (var i = 0; i <28; i++) {
+			if (data_1[i]==0) {
+				$(".days").eq(i-1).html('<h6 id="today-arrow"><span class="glyphicon glyphicon-triangle-top"aria-hidden="true"></span></h6>');
+				break;
+			}	
+		}
+	}
+	$("#carousel-example-generic").carousel({
+		interval:false
+	})
+</script>
+
+</body>
+</html>

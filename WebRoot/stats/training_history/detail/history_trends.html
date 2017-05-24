@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+	<title>认知训练平台</title>
+
+	<!-- Bootstrap -->
+	<link href="${basePath!}/assets/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="${basePath!}/assets/css/home.css">
+	
+</head>
+<body style="background-color: #eee">
+	
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand cog-brand" href="#">CogTraining</a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li><a href="${basePath!}/home">主页 </a></li>
+					<li class="active"><a href="${basePath!}/brain_profile">个人数据<span class="sr-only">(current)</span></a></li>
+					<li><a href="${basePath!}/games">游戏</a></li>
+				</ul>
+				
+				<#include "/common/account_nav.html">
+			</div><!-- /.navbar-collapse -->
+		</div><!-- /.container-fluid -->
+	</nav>
+
+
+
+	<div class="main-content">
+		<div id="part-1">
+			<div class="container" style="width: 100%">
+
+				<div class="col-xs-12 cols">
+					<div class="part-left hidden-sm hidden-xs col-md-2" id="part-1-1">
+						<div class="list-group">
+							<a href="${basePath!}/brain_profile" class="list-group-item">概述</a>
+							<a href="${basePath!}/training_history/summaries" 
+								class="list-group-item active">训练历史</a>
+							<a href="${basePath!}/comparison" class="list-group-item">比较情况</a>
+						</div>
+					</div>
+					<div class="dropdown visible-sm visible-xs pull-left">
+						<a class="btn btn-cog dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+							训练历史
+							<span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+							<li><a href="${basePath!}/brain_profile">概述</a></li>
+							<li><a href="${basePath!}/training_history/summaries">训练历史</a></li>
+							<li><a href="${basePath!}/comparison">比较情况</a></li>
+						</ul>
+					</div>
+
+					<div class="part-right col-xs-12 col-md-10">
+
+						<div class="row">
+							<div class="col-xs-12">
+								<div class="panel panel-default">
+
+									<div class="panel-body">
+										<div class="row">
+											<div class="col-xs-12">
+												<h2 class="text-left">训练历史</h2>
+											</div>
+											
+										</div>
+										<div class="row training-history-top-btn">
+											<div class="col-xs-12">
+												<div class="col-xs-6 btn-group">
+													<a href="${basePath!}/training_history/summaries" class="btn btn-default training-history-top-btn-1 bluea">总览</a>
+													<a href="" class="btn btn-default training-history-top-btn-2 disabled">趋势</a>
+												</div>
+												<div class="col-xs-6 btn-group hidden-xs">
+													<a href="" class="btn btn-default training-history-top-btn-3 disabled">最近四周</a>
+													<a href="${basePath!}/training_history/detail/all" 
+													class="btn btn-default training-history-top-btn-4 bluea">所有时间</a>	
+												</div>
+
+											</div>
+										</div>
+										<div class="row ">
+											<div class="row">
+												<div class="col-xs-12">
+													<h4 class="txt-center">你的CPI</h4>
+												</div>
+												
+											</div>
+											<div class="row">
+												<!-- <canvas id="chart-detail" class="col-xs-12"></canvas> -->
+												<div class="col-xs-12" id="chart-detail" 
+													style="position: relative; overflow: hidden; width: 716px; height: 430px; text-align: left; line-height: normal; z-index: 0;">
+										
+										
+												</div>
+											</div>
+											
+
+										</div>
+
+										<div class="row ">
+											<div class="col-xs-12">
+												<a href="${basePath!}/training_history/summaries"><h4 class="bluea" style="text-align: left;margin:10px;">← 查看训练总览</h4></a>
+											</div>
+
+										</div>		
+
+									</div>								
+									
+
+								</div>
+
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<#include "/common/bottom.html">
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="${basePath!}/assets/js/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="${basePath!}/assets/js/bootstrap.min.js"></script>
+<!-- <script type="text/javascript" src="${basePath!}/assets/js/Chart.js"></script> -->
+<script src="${basePath}/resources/js/echarts.min.js"></script>
+
+<script type="text/javascript">
+
+	window.onload=function(){
+		var s_height=$(window).height();
+		var navbar_height=$("#navbar").outerHeight();
+		$("#part-1").css("min-height",s_height-navbar_height-$("#part-6").outerHeight());
+		$("#part-1").css("margin-top",navbar_height);
+
+
+
+		//折线图
+		var myChart = echarts.init(document.getElementById('chart-detail'));
+		var option = {
+    
+			    tooltip: {
+			        trigger: 'axis'
+			    },
+			    legend: {
+			        data:[
+			        	'CPI',
+			        <#list classLPIs.keySet() as key>
+	            		'${key}'<#if key_has_next>,</#if>
+	            	</#list>
+
+			        ]
+			    },
+			    grid: {
+			        left: '3%',
+			        right: '4%',
+			        bottom: '3%',
+			        containLabel: true
+			    },
+			    xAxis: {
+			        // axisLine:true,
+			        // splitLine:false,
+			        
+			        type: 'category',
+					boundaryGap: false,
+					data: [
+						
+						<#list weeks as week>
+							'${week}'<#if week_has_next>,</#if>	
+						
+						</#list>
+					]
+			    },
+			    yAxis: {
+			        splitLine:false,
+			        //axisLine:false,
+			        type: 'value'
+			    },
+			    series: [
+			    	{
+			    		name:'CPI',
+			    		type:'line',
+			    		data:${LPIs}
+			    	},
+			    <#list classLPIs.keySet() as key>
+			       	{
+			       		name:'${key}',
+			            type:'line',
+
+			            data:${classLPIs[key]}
+			        }
+			        <#if key_has_next>,</#if>
+			    </#list>
+			    ]
+			};
+		myChart.setOption(option);
+		
+		
+	}
+
+</script>
+</body>
+</html>

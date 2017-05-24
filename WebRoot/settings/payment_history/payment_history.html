@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" xml:lang="en"
+	xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+		<title>payment_history - Lumosity</title>
+
+		<link
+			href="./resources/css/payment_history/application-236fb13abc5666d3bb972caff191cd338d58ee733d417b98869408d5375b3631.css"
+			media="screen, projection, print" rel="stylesheet">
+
+	</head>
+
+	<body class="en trainer_app settings payment_histories show">
+		<div class="masthead-wrapper authed container-fluid">
+			<div class="container">
+				<div class="masthead">
+					<a class="lumosity-logo-link " href="${basePath}/home"
+						rel="nofollow"><img alt="Lumosity" class="lumosity-logo white"
+							height="26"
+							src="./resources/images/common/lumosity_logo_white.png"
+							width="101">
+					</a>
+					<#include "/common/head.html">
+					<#include "/common/account_nav.html">
+
+				</div>
+			</div>
+		</div>
+
+
+		<div class="container">
+			<div class="row">
+				<div class="left-nav-column span3">
+					<ul class="affix-nav nav nav-list affix-top">
+						<li>
+							<a href="https://www.lumosity.com/app/v4/settings" rel="nofollow">←
+								返回账户设置</a>
+						</li>
+					</ul>
+				</div>
+				<div class="main-content-column span9">
+					<div class="payment-history" id="settings-payment-history">
+						<div class="header">
+							<h2 class="header">
+								支付历史
+							</h2>
+							<p class="subheader">
+								您的购买表单
+							</p>
+						</div>
+						<hr>
+						<div class="purchases">
+							<div class="purchase">
+								<div class="payment-info-row row-fluid">
+									<div class="date span3">
+										<p>
+											June 29, 2016
+										</p>
+									</div>
+									<div class="name span3">
+										<p class="info-text">
+											<strong>Plan:</strong> Yearly
+										</p>
+									</div>
+									<div class="price span3">
+										<p class="info-text">
+											<strong>Paid:</strong> $59.99 USD
+										</p>
+									</div>
+								</div>
+								<div class="view-payment-details">
+									<a class="details" href="javascript:void(0)" rel="nofollow"
+										style="display: none;">View more details</a>
+									<div class="more-details">
+										<a class="less-details" href="javascript:void(0)"
+											rel="nofollow">View less detail</a>
+										<p class="details-text">
+											<strong>Order Number</strong>: 16010357
+										</p>
+										<p class="details-text">
+											<strong>Payment Method:</strong> Apple iTunes
+										</p>
+										<p class="details-text">
+											<strong>Original Price:</strong> $59.99
+										</p>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<#include "/common/bottom.html">
+		
+		<div id="javascripts">
+			<script type="text/javaScript" src="${basePath!}/resources/js/jquery-3.1.1.min.js">
+			</script>
+			<script type="text/javaScript" src="${basePath!}/resources/js/bootstrap.min.js">
+			</script>
+		</div>
+
+
+
+	</body>
+</html>

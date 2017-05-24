@@ -1,0 +1,168 @@
+body{
+	font-family: "Museo Sans","Lucida Grande",Arial,sans-serif;
+	color: #333;
+}
+
+.cols{
+	padding: 0;
+	text-align: center;
+}
+#navbar{
+	background-color: rgba(255,255,255,.95);
+	min-height: 96px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	margin-bottom: 0px;
+
+}
+#navbar-content{
+	max-width: 988px;
+	margin: 0px auto;
+}
+#navbar-brand-text{
+	color: #0e91a0;
+	font-weight: bold;
+	font-size: 28px;
+}
+
+.btn-cog{
+	padding-left: 20px;
+	padding-right: 20px;
+	border-width: 0 0 2px 0;
+}
+#btn-login{
+	background-color: #eeeeee;
+	border-bottom-color: #cccccc
+}
+#part-6{
+	background-color: #146c78;
+	min-height: 200px;
+	padding-top: 30px;
+}
+#part-6-inner{
+	max-width: 400px;
+	margin: 0 auto;
+}
+.part-6-inner-a,.part-6-inner-a:hover,.part-6-inner-a:active{
+	color: white;
+	text-align: center;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+
+.login-box{
+	display: block;
+	background-image: url(../img/login_box_bg.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+#login-form{
+	max-width: 600px;
+	margin: 0 auto;
+	padding-top: 50px;
+}
+.login-form-brand{
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+.form-control, .form-control[readonly]{
+	background: none;
+}
+
+
+.middle-input{
+	border-left: none;
+	border-right: none;
+	height: 60px;
+	font-size: 20px;
+	border-radius: 0;
+	padding:0 20px;
+	
+}
+
+form > .form-group{
+	position: relative;
+}
+
+.input-group-addon{
+	background: none;
+}
+
+.glyphicon{
+	font-size: 150%;
+}
+
+o{
+	color:#1b809e;
+	cursor: pointer;
+}
+.modal-body{
+	max-height: 500px;
+	overflow: scroll;
+}
+#submit{
+	min-height: 50px
+}
+
+.glyphicon-ok{
+	color: green;
+}
+.glyphicon-remove{
+	color: red;
+}
+.opacity_0{
+	opacity: 0;
+}
+
+.panel{
+	background: rgba(255,255,255,0.9);
+	margin:30px 0;
+}
+
+#alert{
+	position: absolute;
+	width: 100%;
+	border-radius: 0;
+	text-align: center;
+	
+}
+.fade{
+	animation:fade 1s;
+	-moz-animation:fade 1s;
+	-webkit-animation:fade 1s;
+	-o-animation:fade 1s;
+}
+@keyframes fade
+{
+from {opacity: 1;}
+to {opacity: 0;}
+}
+
+@-moz-keyframes fade
+{
+from {opacity: 1;}
+to {opacity: 0;}
+}
+
+@-webkit-keyframes fade
+{
+from {opacity: 1;}
+to {opacity: 0;}
+}
+
+@-o-keyframes fade
+{
+from {opacity: 1;}
+to {opacity: 0;}
+}
+
+.panel-body{
+	padding: 0;
+}
+
+
+
+

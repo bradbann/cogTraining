@@ -1,0 +1,50 @@
+<#if games??>
+<div class="row" style="margin-top: 20px;padding: 20px;">
+	<div class="col-xs-12">
+		<h3>你的适应性训练</h3>
+		<h4><small>我们会让你进行一段适应性训练，得到你的训练起点</small></h4>
+	</div>								
+	
+</div>
+<div class="row" id="turbo-play-rank">
+	<div class="col-xs-12">
+		<div class="row">
+			<div class="" style="max-width: 400px;margin: 30px auto">
+				<h5>你剩下的训练内容</h5>
+				<#list games as game>
+				<div class="col-xs-${gameNumber}">
+					
+					<div class="row">
+						<img src="${basePath!}/resources/images/games/${game.gameFileName}.png">
+					</div>
+					
+				</div>
+				</#list>
+			</div>
+		</div>
+		
+	</div>
+	<a href="${basePath!}/fitTest/play/${sequence!}">
+	<button class="btn btn-lg btn-primary" id="turbo-next">下一个适应性训练游戏
+	</button>
+	</a>
+</div>
+<#else>
+<div class="row" style="margin-top: 20px;padding: 20px;">
+	<div class="col-xs-12" style="margin-top: 80px;text-align: center">
+		<h4><strong>你已完成了适应性训练</strong>
+		</h4>
+		<h4><strong>请前往首页查看我们为你安排的今日训练计划！</strong>
+		</h4>
+	</div>	
+	<div class="row" id="turbo-play-rank">
+	<div class="col-xs-12">
+	</div>
+		<a href="${basePath!}/home">
+		<button class="btn btn-lg btn-primary" id="turbo-next">前往首页
+		</button>
+		</a>
+	</div>							
+	
+</div>
+</#if>

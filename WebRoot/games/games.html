@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+	<title>认知训练平台</title>
+
+	<!-- Bootstrap -->
+	<link href="${basePath!}/assets/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="${basePath!}/assets/css/home.css">
+	
+</head>
+<body style="background-color: #eee">
+	
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand cog-brand" href="${basePath!}/home">CogTraining</a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li><a href="${basePath!}/home">主页</a></li>
+					<li><a href="${basePath!}/brain_profile">个人数据</a></li>
+					<li class="active"><a href="${basePath!}/games">游戏<span class="sr-only">(current)</span></a></li>
+				</ul>
+				
+				<#include "/common/account_nav.html">
+			</div><!-- /.navbar-collapse -->
+		</div><!-- /.container-fluid -->
+	</nav>
+
+
+
+	<div class="main-content">
+		<div id="part-1">
+			<div class="container" style="width: 100%">
+
+				<div class="col-xs-12 cols">
+					<div class="part-left hidden-sm hidden-xs col-md-2" id="part-1-1">
+						<div class="list-group">
+							<a href="${basePath!}/games?filter=all" 
+								<#if filter== "all"> 
+									class="list-group-item active" 
+								<#else> 
+									class="list-group-item"
+								</#if>>
+								所有训练
+							</a>
+							<h4>认知训练</h4>
+							<a href="${basePath!}/games?filter=speed" 
+								<#if filter== "speed"> 
+									class="list-group-item active"
+								<#else> 
+									class="list-group-item"
+								</#if>>
+								速度训练
+							</a>
+							<a href="${basePath!}/games?filter=memory" 
+								<#if filter== "memory"> 
+									class="list-group-item active"
+								<#else> 
+									class="list-group-item"
+								</#if>>
+								记忆训练
+							</a>
+							<a href="${basePath!}/games?filter=attention" 
+								<#if filter== "attention"> 
+									class="list-group-item active" 
+								<#else> 
+									class="list-group-item"
+								</#if>>
+								注意训练
+							</a>
+							<a href="${basePath!}/games?filter=flexibility"
+								<#if filter== "flexibility"> 
+									class="list-group-item active"
+								<#else> 
+									class="list-group-item"
+								</#if>>
+								灵活训练
+							</a>
+							<a href="${basePath!}/games?filter=problem_solving" 
+								<#if filter== "problem_solving"> 
+									class="list-group-item active" 
+								<#else> 
+									class="list-group-item"
+								</#if>>
+								逻辑训练
+							</a>
+							<#--
+							<h4>视觉训练</h4>
+							<a href="${basePath!}/games?filter=amblyopia"
+								<#if filter== "amblyopia"> 
+									class="list-group-item active"
+								<#else> 
+									class="list-group-item"
+								</#if>>
+								弱视训练
+							</a>
+							<a href="${basePath!}/games?filter=shortsightedness" 
+								<#if filter== "shortsightedness">
+									class="list-group-item active"
+								<#else> 
+									class="list-group-item"
+								</#if>>
+								近视训练
+							</a>
+							<a href="${basePath!}/games?filter=binoculars"
+								<#if filter== "binoculars">
+									class="list-group-item active" 
+								<#else> 
+									class="list-group-item"
+								</#if>>
+								双眼视训练
+							</a>
+							<a href="${basePath!}/games?filter=low_vison"
+								<#if filter== "low_vison"> 
+									class="list-group-item active" 
+								<#else> 
+									class="list-group-item"
+								</#if>>
+								低视力训练
+							</a>
+							-->
+						</div>
+					</div>
+					<div class="dropdown visible-sm visible-xs pull-left">
+						<a class="btn btn-cog dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" href="${basePath!}/games?filter=all">
+							所有训练
+							<span class="caret"></span>
+						</a>
+						
+						<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+							<li><a href="${basePath!}/games?filter=speed">速度训练</a></li>
+							<li><a href="${basePath!}/games?filter=memory">记忆训练</a></li>
+							<li><a href="${basePath!}/games?filter=attention">注意训练</a></li>
+							<li><a href="${basePath!}/games?filter=flexibility">灵活训练</a></li>
+							<li><a href="${basePath!}/games?filter=problem_solving">逻辑训练</a></li>
+							<#--
+							<li role="separator" class="divider"></li>
+							<li><a href="${basePath!}/games?filter=amblyopia">弱视训练</a></li>
+							<li><a href="${basePath!}/games?filter=shortsightedness">近视训练</a></li>
+							<li><a href="${basePath!}/games?filter=binoculars">双眼视训练</a></li>
+							<li><a href="${basePath!}/games?filter=low_vison">低视力训练</a></li>
+							-->
+						</ul>
+						
+					</div>
+					<div class="part-right col-xs-12 col-md-10">
+
+						<div class="row">
+							<div class="col-xs-12">
+								<div class="panel panel-default">
+
+									<div class="panel-body">
+										<#if filter== "all"> 
+										<div class="row">
+											<div class="col-xs-12">
+												<h2 class="text-left">所有训练</h2>
+											</div>
+										</div>
+										</#if>
+										<#list showClasses as gameClass>
+										<div class="row game-type">
+											<div class="row">
+												<div class="col-xs-12">
+													<div class="col-xs-12">
+														<h4 class="game-type-header">
+														${gameClass.gameClassName!}</h4>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-xs-10 col-xs-offset-1">
+												<#list games as game>
+													<#if (game.gameClassId) == (gameClass.gameClassId)>
+													<div class="col-sm-4 col-xs-12">
+														<a href="${basePath!}/games/play/${game.gameFileName}">
+															<div class="row">
+																<img src="${basePath!}/resources/images/games/${game.smallImg}">
+															</div>
+															<h4 class="txt-below-game">
+																<small>${gameClass.gameClassName}</small>
+															</h4>
+															<h4 class="bluea txt-below-game">
+																${game.gameName}
+															</h4>
+															<h5 class="txt-below-game txt-below-game-last">
+																${game.brief}
+															</h5>
+														</a>
+													</div>
+													</#if>
+												</#list>
+												</div>
+											</div>
+										</div>
+										</#list>
+									</div>								
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<#include "/common/bottom.html">
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="${basePath!}/assets/js/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="${basePath!}/assets/js/bootstrap.min.js"></script>
+<!-- <script type="text/javascript" src="${basePath!}/assets/js/Chart.js"></script> -->
+
+<script type="text/javascript">
+
+	window.onload=function(){
+		var s_height=$(window).height();
+		var navbar_height=$("#navbar").outerHeight();
+		$("#part-1").css("min-height",s_height-navbar_height-$("#part-6").outerHeight());
+		$("#part-1").css("margin-top",navbar_height);
+
+
+
+		//折线图
+		
+		
+	}
+
+</script>
+</body>
+</html>

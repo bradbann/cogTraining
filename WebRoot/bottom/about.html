@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+	<title>认知训练平台</title>
+
+	<!-- Bootstrap -->
+	<link href="${basePath!}/assets/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="${basePath!}/assets/css/cog.css">
+
+	
+</head>
+<body>
+	<nav class="navbar navbar-default navbar-fixed-top" id="navbar">
+		<div class="container-fluid" id="navbar-content">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<#if (session["userInfo"])??>
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="${basePath}/home" id="navbar-brand-text">CogTraining</a>
+			</div>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			
+			<#else>
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="${basePath}/index" id="navbar-brand-text">CogTraining</a>
+			</div>
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<form class="navbar-form navbar-right">
+					<a type="submit" class="btn btn-primary btn-cog" href="${basePath!}/register">
+						现在就开始
+					</a>
+					<a type="submit" class="btn btn-inverse btn-cog" id="btn-login" href="${basePath!}/login">
+						登录
+					</a>
+				</form>
+			</div><!-- /.navbar-collapse -->
+			</#if>
+		</div><!-- /.container-fluid -->
+	</nav>
+
+
+
+	<!--main content-->
+	<div id="main-content">
+		<div id="part-1" style="background: none;">
+			<div class="container" id="about-part-1-inner">
+				<div class="row bluebg">
+					<div class="about-content-row">
+						<h3 class="whitetxt" style="margin-top: 10px;">关于我们</h3>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="about-content-row">
+						<div class="row about-img-1-row">
+							<img src="${basePath!}/assets/img/about-img-1.jpg" class="about-img-1">
+						</div>
+					</div>
+				</div>
+
+				<div class="row bluebg">
+					<div class="about-content-row">
+						<h4 class="whitetxt" style="margin-top: 10px;">企业文化</h4>
+						<h5 class="whitetxt txt-para" style="margin-top: 30px;">杭州华泰医疗科技有限公司锁定视功能检查治疗的前沿课题，以“拯救弱视儿童，还孩子一个明亮的世界”为宗旨，不断研发出了维视顿系列和好眼力系列产品，赢得了医院、专业医生和弱视儿童家长的赞誉和口碑。自公司创办以来，得到了各级政府的大力支持及领导的热情关怀。中央政治局委员张德江同志、国家科技部部长朱丽兰同志、中国医学科学院院长巴德年院士以及浙江省科技厅、杭州市市委政府等各级领导相继来公司莅临指导，给予了公司极大鼓舞。同时杭州电视台、浙江卫视、杭州日报、都市快报都对公司和产品作了相应的报道。</h5>
+						<div class="row" style="margin: 30px 0;">
+							<div class="col-xs-12 col-sm-6" style="margin: 10px 0px">
+								<div class="row about-img-2-row">
+									<img src="${basePath!}/assets/img/about-img-2.png" class="about-img-2">
+								</div>
+							</div>
+							<div class="col-xs-12 col-sm-6" style="margin: 10px 0px">
+								<div class="row about-img-2-row">
+									<img src="${basePath!}/assets/img/about-img-3.png" class="about-img-2">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+                <div class="row">
+                    <div class="about-content-row" >
+                    	<h4 class="blacktxt" style="margin-top: 10px;">合作机构</h4>
+                	    <h5 class="blacktxt txt-para" style="margin-top: 30px;">杭州华泰信息技术有限公司与东南大学学习科学研究中心情感信息处理研究室，北京师范大学脑与认知科学研究所，北京大学IDO麦戈文脑科学研究所，南加州大学，英国赫尔本大学，浙江大学，浙江工业大学等众多国内外知名大学及其研究所建立了良好的合作关系。</h5>
+                	    <div class="row">
+					        <div class="about-content-row">
+						        <div class="row about-img-1-row">
+							        <img src="${basePath!}/assets/img/index_part_5.png" class="about-img-1">
+						        </div>
+					        </div>
+				        </div>
+                    </div>
+                    
+                </div>
+
+                <div class="row bluebg">
+                    <div class="about-content-row">
+                    	<h4 class="whitetxt" style="margin-top: 10px;">联系我们</h4>
+                	    <div class="row">
+					        <div class="about-content-row" >
+						        <div class="row about-img-1-row" style="margin-bottom: 0px">
+							        <img src="${basePath!}/assets/img/about-img-4.png" class="about-img-1">
+						        </div>
+					        </div>
+				        </div>
+				        <div class="row whitetxt">
+					        <div class="row about-content-1-row">
+						        
+							        <div class="col-md-8" >
+				        		        <div >
+				        			        <h6>地址：浙江省杭州市西湖区文二路207号耀江文欣大厦18F</h6>
+				        			        <h6>联系电话：0571-88217715 88217719 0571-88217717（传真）</h6>
+				        			        <h6>邮箱：goodeye@zjut.edu.cn 876784272@qq.com</h6>
+				        		        </div>
+				        	        </div>
+				        	        <div class="col-md-4" >
+				        		        <div >
+				        			        <h6>QQ：876784272（售后服务）</h6>
+				        			        <h6>网址：http://www.viston.com</h6>
+				        			        <h6>邮政编号：310012</h6>
+				        		        </div>
+				        	        </div>
+						        
+					        </div>
+				        </div>
+				       
+                    </div>
+                	
+                </div>
+			</div>
+		</div>
+
+		
+
+
+		<#include "/common/bottom.html">
+
+	</div>
+	<!--main content-->
+
+
+
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="${basePath!}/assets/js/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="${basePath!}/assets/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		window.onload=function(){
+			var s_height=$(window).height();
+			var navbar_height=$("#navbar").outerHeight();
+			// $("#part-1").height(s_height-navbar_height);
+			$("#part-1").css("margin-top",navbar_height);
+  			// $("#part-2").css("min-height",(s_height-navbar_height)+"px");
+  			
+  			
+  		}
+  		
+
+
+  	</script>
+  </body>
+  </html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+	<title>认知训练平台</title>
+
+	<!-- Bootstrap -->
+	<link href="${basePath!}/assets/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="${basePath!}/assets/css/home.css">
+	
+</head>
+<body style="background-color: #eee">
+
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand cog-brand" href="#">CogTraining</a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li><a href="${basePath!}/home">主页 </a></li>
+					<li><a href="${basePath!}/brain_profile">个人数据</a></li>
+					<li><a href="${basePath!}/games">游戏</a></li>
+				</ul>
+				
+				<#include "/common/account_nav.html">
+			</div><!-- /.navbar-collapse -->
+		</div><!-- /.container-fluid -->
+	</nav>
+
+	<div class="main-content">
+		<div id="part-1">
+			<div class="container" style="width: 100%">
+
+				<div class="col-xs-12 cols">
+					<div class="part-left col-md-2 setting-txt-back" id="part-1-1">
+						<a href="${basePath!}/settings" class="bluea">← 返回账户设置</a>
+					</div>
+					
+
+					<div class="part-right col-xs-12 col-md-10">
+
+						<div class="row">
+							<div class="col-xs-12">
+								<div class="panel panel-default">
+
+									<div class="panel-body">
+
+										<div class="row setting-row last-setting-row">
+											<div class="col-xs-12">
+												<h2 class="setting-row-headers"><strong>修改个人信息</strong></h2>
+												
+												<form class="form-group update-form" action="${basePath!}/settings/personal_info" method="post">
+													<div class="row" id="update-personal-img-row">
+														<div class="col-xs-6">
+															<img src="${basePath!}/resources/images/common/medium.png" id="update-personal-img">
+														</div>
+													</div>
+													<div class="row form-group">
+														<div class="col-xs-12 col-sm-7">
+															<label>姓名</label>
+															<input class="form-control" 
+															type="text" name="name" 
+															value="${(session['userInfo'].userName)!}" 
+															id="name" onblur="show()">
+														</div>
+													</div>
+													<div class="row form-group">
+														<div class="col-xs-12 col-sm-7 ">
+
+															<label>性别</label>
+															<div class="form-control">
+																<label class="radio-inline" onchange="show()">
+																	<input type="radio" name="gender" id="inlineRadio1" value="0" > 男
+																</label>
+																<label class="radio-inline" onchange="show()">
+																	<input type="radio" name="gender" id="inlineRadio2" value="1"> 女
+																</label>
+															</div>
+															
+														</div>
+													</div>
+													
+													<div class="row form-group">
+														<div class="col-xs-12 col-sm-7">
+															<label>学历</label>
+															<select class="form-control" onchange="show()" name="education_level" id="education">
+																<option value="0">-</option>
+																<option value="1">小学生</option>
+																<option value="2">初中生</option>
+																<option value="3">高中生</option>
+																<option value="4">专科生</option>
+																<option value="5">本科生</option>
+																<option value="6">硕士生</option>
+																<option value="7">博士生</option>
+																<option value="8">其他</option>
+															</select>
+														</div>
+													</div>
+													<div class="row form-group">
+														<div class="col-xs-12 col-sm-7">
+															<label>职业</label>
+															<select class="form-control" onchange="show()" name="occupation" id="occupation">
+																<option value="0">-</option>
+																<option value="1">学生</option>
+																<option value="2">教师</option>
+																<option value="3">行政</option>
+																<option value="4">设计师</option>
+																<option value="5">工程师</option>
+																<option value="6">服务业</option>
+																<option value="7">销售</option>
+																<option value="8">医生</option>
+																<option value="9">其他</option>
+
+															</select>
+														</div>
+													</div>
+
+													<div class="row form-group">
+														<div class="col-xs-12">
+															<input class="btn btn-primary" type="submit" id="btn-submit" disabled="disabled" value="保存修改">
+														</div>
+													</div>
+												</form>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<#include "/common/bottom.html">
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="${basePath!}/assets/js/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="${basePath!}/assets/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+	window.onload=function(){
+		var s_height=$(window).height();
+		var navbar_height=$("#navbar").outerHeight();
+		$("#part-1").css("min-height",s_height-navbar_height-$("#part-6").outerHeight());
+		$("#part-1").css("margin-top",navbar_height);
+
+	}
+	function show() {
+		
+		$("#btn-submit").removeAttr("disabled");
+	}
+
+	//表单初始化
+	$(document).ready(function() {
+
+		var name = "${(session['userInfo'].userName)!}";
+		var gender = ${(session["userInfo"].gender)!0};
+		var education = ${(session["userInfo"].educationId)!0};
+		var job = ${(session["userInfo"].jobId)!0};
+
+
+		$("#name").val(name);
+		if (gender == 1) {
+			$("input:radio").eq(1).attr('checked', 'true');
+		} else {
+			$("input:radio").eq(0).attr('checked', 'true');
+		}
+		
+		$("#education").val(education);
+		$("#occupation").val(job);
+
+		
+
+	});
+
+</script>
+</body>
+</html>

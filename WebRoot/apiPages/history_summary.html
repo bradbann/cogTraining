@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+	<title>认知训练平台</title>
+
+	<!-- Bootstrap -->
+	<link href="${basePath!}/assets/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="${basePath!}/assets/css/home.css">
+	
+</head>
+<body style="background-color: #eee">
+	<div class="main-content">
+		<div id="part-1">
+			<div class="container" style="width: 100%">
+
+				<div class="col-xs-12 cols">
+					<div class="part-right col-xs-12 col-md-10">
+						<div class="row">
+							<div class="col-xs-12">
+								<div class="panel panel-default">
+									<div class="panel-body">
+										<div class="row">
+											<div class="col-xs-12">
+												<h2 class="text-left">训练历史</h2>
+											</div>
+										</div>
+
+										<div class="row training-history-row">
+											<div class="col-xs-12 col-sm-4 training-history-row-left">
+												<div class="row">
+													<h3><small>在最近四周里</small></h3>
+													<h4>至少玩了一个游戏的天数</h4>
+													<h1>${totalPlayDay!0}</h1>
+												</div>
+											</div>
+											<div class="col-xs-12 col-sm-4 training-history-row-middle">
+												<div class="row">
+													<div class="col-xs-12">
+														<h3><small>${startDay} ~ ${today}</small></h3>
+														<div class="row">
+															<div class="calendar row" id="training-history-calendar">
+																<div id="training-calendar" class="col-xs-12">
+																	<div class="week">
+																		<div class="calenderhead firstday">
+																			<h5 class="txt-center">日</h5>
+																		</div>
+																		<div class="calenderhead">
+																			<h5 class="txt-center">一</h5>
+																		</div>
+																		<div class="calenderhead">	
+																			<h5 class="txt-center">二</h5>
+																		</div>
+																		<div class="calenderhead">
+																			<h5 class="txt-center">三</h5>
+																		</div>
+																		<div class="calenderhead">
+																			<h5 class="txt-center">四</h5>
+																		</div>
+																		<div class="calenderhead">
+																			<h5 class="txt-center">五</h5>
+																		</div>
+																		<div class="calenderhead">
+																			<h5 class="txt-center">六</h5>
+																		</div>
+																	</div>
+																	<div class="week">
+																		<div class="days firstday"></div>
+																		<div class="days"></div>
+																		<div class="days"></div>
+																		<div class="days"></div>
+																		<div class="days"></div>
+																		<div class="days"></div>
+																		<div class="days"></div>
+																		<div class="total-times hidden-xs">
+																			<div class="col-xs-10 total-bar" style="width: 80%" id="week-bar-1">
+																			</div>
+																			<h5 class="col-xs-1 total-txt" id="total-txt-1">2000</h5>
+																		</div>
+																	</div>
+																	<div class="week">
+																		<div class="days firstday"></div>
+																		<div class="days"></div>
+																		<div class="days"></div>
+																		<div class="days"></div>
+																		<div class="days"></div>
+																		<div class="days"></div>
+																		<div class="days"></div>
+																		<div class="total-times hidden-xs">
+																			<div class="col-xs-10 total-bar" style="width: 80%" id="week-bar-2">
+																			</div>
+																			<h5 class="col-xs-1 total-txt" id="total-txt-2">2000</h5>
+																		</div>
+																	</div>
+																	<div class="week">
+																		<div class="days firstday"></div>
+																		<div class="days"></div>
+																		<div class="days"></div>
+																		<div class="days"></div>
+																		<div class="days"></div>
+																		<div class="days"></div>
+																		<div class="days"></div>
+																		<div class="total-times hidden-xs">
+																			<div class="col-xs-10 total-bar" style="width: 80%" id="week-bar-3">
+																			</div>
+																			<h5 class="col-xs-1 total-txt" id="total-txt-3">2000</h5>
+																		</div>
+																	</div>
+																	<div class="week">
+																		<div class="days firstday"></div>
+																		<div class="days"></div>
+																		<div class="days"></div>
+																		<div class="days"></div>
+																		<div class="days"></div>
+																		<div class="days"></div>
+																		<div class="days"></div>
+																		<div class="total-times hidden-xs">
+																			<div class="col-xs-10 total-bar" style="width: 80%" id="week-bar-4">
+																			</div>
+																			<h5 class="col-xs-1 total-txt" id="total-txt-4">2000</h5>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-xs-12 col-sm-4 training-history-row-left hidden-xs">
+												<div class="row">
+													<div class="col-xs-12">
+														<h3><small>每一周玩的游戏数</small></h3>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="row  training-history-row">
+											<div class="col-xs-12 col-sm-4 training-history-row-left">
+												<div class="row">
+													<h3><small></small></h3>
+													<h4>总共训练次数</h4>
+													<h1>${totalGameNum!0}</h1>
+												</div>
+											</div>
+											<div class="col-xs-12 col-sm-8 training-history-row-middle">
+												<div class="row">
+													<div class="col-xs-12">
+														<div class="col-sm-6 col-xs-12">
+															<h3><small>各认知领域的训练次数</small></h3>
+															<div class="row">
+																<canvas id="piecharts"></canvas>
+
+															</div>
+														</div>
+														<div class="col-sm-6 col-xs-12" id="piecharts-bar-sample">
+															<h3><small></small></h3>
+															<div class="row">
+																<div class="row">
+																	<h5><s id="piecharts-bar-sample-1"></s>速度训练<v id="piecharts-bar-sample-txt-1"></v></h5>
+																</div>
+																<div class="row">
+																	<h5><s id="piecharts-bar-sample-2"></s>记忆训练<v id="piecharts-bar-sample-txt-2"></v></h5>
+																</div>
+																<div class="row">
+																	<h5><s id="piecharts-bar-sample-3"></s>注意训练<v id="piecharts-bar-sample-txt-3"></v></h5>
+																</div>
+																<div class="row">
+																	<h5><s id="piecharts-bar-sample-4"></s>灵活训练<v id="piecharts-bar-sample-txt-4"></v></h5>
+																</div>
+																<div class="row">
+																	<h5><s id="piecharts-bar-sample-5"></s>逻辑训练<v id="piecharts-bar-sample-txt-5"></v></h5>
+																</div>
+																
+															
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+		
+
+										<div class="row  training-history-row">
+											<div class="col-xs-12 col-sm-4 training-history-row-left">
+												<div class="row">
+													<h3><small></small></h3>
+													<h4>CPI的变化</h4>
+													<#if change &lt; 0>
+														<h3>
+														<small>下降了 ${changePercent!0}%（最近四周）
+														</small>
+														</h3>
+														<h1>
+														<span class="glyphicon-triangle-bottom decrease" aria-hidden="true"></span>${change!0}
+														</h1>
+													<#elseif change == 0>
+														<h1>0</h1>
+													<#else>
+														<h3>
+														<small>上升了 ${changePercent!0}%（最近四周）
+														</small>
+														</h3>
+														<h1>
+														<span class="glyphicon glyphicon-triangle-top increase" aria-hidden="true"></span>${change!0}
+														</h1>
+													</#if>
+													<!-- glyphicon-triangle-bottom decrease 如果是减少了 替换这个class -->
+												</div>
+											</div>
+											<div class="col-xs-12 col-sm-8 training-history-row-middle">
+												<div class="row">
+													<div class="col-xs-12">
+														<div class="col-xs-6">
+															<h3><small>现在的CPI</small></h3>
+															<div class="row">
+																<canvas id="chart1" height="200" 
+																	class="col-xs-12" />
+															</div>
+														</div>
+
+														<div class="col-xs-5 col-xs-offset-1" 
+															id="piecharts-bar-sample">
+															<h3><small></small></h3>
+															<div class="row">
+																<#list changePie.keySet() as key>
+																<div class="row">
+																	<h5>${key!}
+																	<#if changePie[key] &gt; 0>
+																	<span class="glyphicon glyphicon-triangle-top increase pull-right" aria-hidden="true">
+																	</span>
+																	<v class="pull-right" 
+																	id="linecharts-bar-sample-txt-1">
+																		${changePie[key]!}
+																	</v>
+																	<#elseif changePie[key]?number == 0>
+																	
+																	-
+																	
+																	<#else>
+																	<span class="glyphicon glyphicon-triangle-top decrease pull-right" aria-hidden="true">
+																	</span>
+																	<v class="pull-right" 
+																	id="linecharts-bar-sample-txt-1">
+																		${changePie[key]?replace("-","")!}
+																	</v>
+																	</#if>
+																	</h5>
+																</div>
+																</#list>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>								
+										<div class="row ">
+										<div class="col-xs-12">
+											<a href="${basePath!}/training_history/detail"><h4 class="bluea" style="text-align: right;margin:10px;">查看趋势 →</h4></a>
+										</div>
+										</div>								
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="${basePath!}/assets/js/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="${basePath!}/assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="${basePath!}/assets/js/Chart.js"></script>
+
+<script type="text/javascript">
+
+	window.onload=function(){
+		var s_height=$(window).height();
+		var navbar_height=$("#navbar").outerHeight();
+		$("#part-1").css("min-height",s_height-navbar_height-$("#part-6").outerHeight());
+		$("#part-1").css("margin-top",navbar_height);
+
+		//日历
+		var data_1=${dateStats!};//状态 0 未到 1 完成  2 未完成
+		var data_2=${weeks!};//日期
+		for (var i = 0; i <28; i++) {
+			$(".days").eq(i).attr("date",data_2[i]);
+			if (data_1[i]==0) {
+				$(".days").eq(i).addClass("old");
+			}else if (data_1[i]==2) {
+				$(".days").eq(i).addClass("noplay");
+			}	
+		}
+		for (var i = 0; i <28; i++) {
+			if (data_1[i]==0) {
+				$(".days").eq(i-1).html('<h6 id="today-arrow"><span class="glyphicon glyphicon-triangle-top"aria-hidden="true"></span></h6>');
+				break;
+			}	
+		}
+
+		//每周游戏总数的统计
+		var week_data=${weekGameNum!};
+		var week_max=0;
+		for(var i=0;i<4;i++){
+			if (week_data[i]>week_max) {
+				week_max=week_data[i];
+			}
+		}
+		
+		for(var i=0;i<4;i++){
+			console.log(week_data[i]/week_max);
+			console.log(100*0.8*week_data[i]/week_max+"%");
+			$("#week-bar-"+(i+1)).css("width",100*0.8*week_data[i]/week_max+"%");
+			$("#total-txt-"+(i+1)).html(week_data[i]);
+		}
+
+		//饼图
+		var training_data= ${classPie!};
+		var pieData = [
+		{
+			value: training_data[0],
+			color:"#F7464A",
+			highlight: "#FF5A5E",
+			label: "速度训练"
+		},
+		{
+			value: training_data[1],
+			color: "#46BFBD",
+			highlight: "#5AD3D1",
+			label: "记忆训练"
+		},
+		{
+			value: training_data[2],
+			color: "#FDB45C",
+			highlight: "#FFC870",
+			label: "注意训练"
+		},
+		{
+			value: training_data[3],
+			color: "#949FB1",
+			highlight: "#A8B3C5",
+			label: "灵活训练"
+		},
+		{
+			value: training_data[4],
+			color: "#4D5360",
+			highlight: "#616774",
+			label: "逻辑训练"
+		}
+
+		];
+		var ctx = document.getElementById("piecharts").getContext("2d");
+		window.myPie = new Chart(ctx).Pie(pieData);
+		for (var i = 0; i <5; i++) {
+			$("#piecharts-bar-sample-txt-"+(i+1)).html(training_data[i]);
+		}
+
+		
+
+		//折线图
+		var lineChartData = {
+			labels: ${fourWeeksLPI!},
+			datasets: [{
+				label: "CPI",
+				fillColor: "rgba(220,220,220,0)",
+				strokeColor: "#4dbcb6",
+				pointColor: "rgba(220,220,220,0.1)",
+				pointStrokeColor: "rgba(220,220,220,0.1)",
+				pointHighlightFill: "rgba(220,220,220,0.1)",
+				pointHighlightStroke: "rgba(220,220,220,0.1)",
+				data: ${fourWeeksLPI!}
+			}]
+		};
+		// var cpi_data=[30,23,111,32,50];
+		var ctx1 = document.getElementById("chart1").getContext("2d");
+		window.myLine = new Chart(ctx1).Line(lineChartData, {
+			showScale: false,
+			pointDot : true,
+			responsive: false,
+			scaleSteps:10,
+			scaleStepWidth:200,
+			scaleOverride : true,
+
+		});
+		
+	}
+	$("#carousel-example-generic").carousel({
+		interval:false
+	})
+
+</script>
+<script>
+	Chart.defaults.global.pointHitDetectionRadius = 1;
+	Chart.defaults.global.customTooltips = function(tooltip) {
+
+		var tooltipEl = $('#chartjs-tooltip');
+
+		if (!tooltip) {
+			tooltipEl.css({
+				opacity: 0
+			});
+			return;
+		}
+
+		tooltipEl.removeClass('above below');
+		tooltipEl.addClass(tooltip.yAlign);
+
+		var innerHtml = '';
+		// for (var i = tooltip.labels.length - 1; i >= 0; i--) {
+		// 	innerHtml += [
+		// 	'<div class="chartjs-tooltip-section">',
+		// 	'	<span class="chartjs-tooltip-key" style="background-color:' + tooltip.legendColors[i].fill + '"></span>',
+		// 	'	<span class="chartjs-tooltip-value">' + tooltip.labels[i] + '</span>',
+		// 	'</div>'
+		// 	].join('');
+		// }
+		tooltipEl.html(innerHtml);
+
+		tooltipEl.css({
+			opacity: 1,
+			left: tooltip.chart.canvas.offsetLeft + tooltip.x + 'px',
+			top: tooltip.chart.canvas.offsetTop + tooltip.y + 'px',
+			fontFamily: tooltip.fontFamily,
+			fontSize: tooltip.fontSize,
+			fontStyle: tooltip.fontStyle,
+		});
+	};
+	var randomScalingFactor = function() {
+		return Math.round(Math.random() * 100);
+	};
+	
+
+
+</script>
+</body>
+</html>

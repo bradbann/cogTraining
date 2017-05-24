@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+	<title>认知训练平台</title>
+
+	<!-- Bootstrap -->
+	<link href="${basePath!}/assets/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="${basePath!}/assets/css/cog.css">
+
+	<style type="text/css">
+		.ani{
+			background-image: url(${basePath!}/assets/img/banner_1.png);
+			
+			animation:myfirst infinite 20s;
+			-moz-animation:myfirst infinite 20s; /* Firefox */
+			-webkit-animation:myfirst infinite 20s; /* Safari and Chrome */
+			-o-animation:myfirst infinite 20s; /* Opera */
+		}
+
+		@keyframes myfirst
+		{
+			0%   {background-image: url(${basePath!}/assets/img/banner_1.png);}
+			20%  {background-image: url(${basePath!}/assets/img/banner_2.png);}
+			40%  {background-image: url(${basePath!}/assets/img/banner_3.png);}
+			60% {background-image: url(${basePath!}/assets/img/banner_4.png);}
+			80% {background-image: url(${basePath!}/assets/img/banner_5.png);}
+			100% {background-image: url(${basePath!}/assets/img/banner_1.png);}
+		}
+
+		@-moz-keyframes myfirst /* Firefox */
+		{
+			0%   {background-image: url(${basePath!}/assets/img/banner_1.png);}
+			20%  {background-image: url(${basePath!}/assets/img/banner_2.png);}
+			40%  {background-image: url(${basePath!}/assets/img/banner_3.png);}
+			60% {background-image: url(${basePath!}/assets/img/banner_4.png);}
+			80% {background-image: url(${basePath!}/assets/img/banner_5.png);}
+			100% {background-image: url(${basePath!}/assets/img/banner_1.png);}
+		}
+
+		@-webkit-keyframes myfirst /* Safari and Chrome */
+		{
+			0%   {background-image: url(${basePath!}/assets/img/banner_1.png);}
+			20%  {background-image: url(${basePath!}/assets/img/banner_2.png);}
+			40%  {background-image: url(${basePath!}/assets/img/banner_3.png);}
+			60% {background-image: url(${basePath!}/assets/img/banner_4.png);}
+			80% {background-image: url(${basePath!}/assets/img/banner_5.png);}
+			100% {background-image: url(${basePath!}/assets/img/banner_1.png);}
+		}
+
+		@-o-keyframes myfirst /* Opera */
+		{
+			0%   {background-image: url(${basePath!}/assets/img/banner_1.png);}
+			20%  {background-image: url(${basePath!}/assets/img/banner_2.png);}
+			40%  {background-image: url(${basePath!}/assets/img/banner_3.png);}
+			60% {background-image: url(${basePath!}/assets/img/banner_4.png);}
+			80% {background-image: url(${basePath!}/assets/img/banner_5.png);}
+			100% {background-image: url(${basePath!}/assets/img/banner_1.png);}
+		}
+	</style>
+</head>
+<body style="background-color: #eee">
+	<nav class="navbar navbar-default navbar-fixed-top" id="navbar">
+		<div class="container-fluid" id="navbar-content">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#" id="navbar-brand-text">CogTraining</a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+				<form class="navbar-form navbar-right">
+					<a type="submit" class="btn btn-primary btn-cog" href="${basePath!}/register">现在就开始</a>
+					<a type="submit" class="btn btn-inverse btn-cog" id="btn-login" href="${basePath!}/login">登录</a>
+				</form>
+
+			</div><!-- /.navbar-collapse -->
+		</div><!-- /.container-fluid -->
+	</nav>
+
+
+
+	<!--main content-->
+	<div id="main-content">
+		<div id="part-1" class="">
+			<div class="container" id="part-1-inner">
+				<div class="wrap">
+					<div class="col-xs-12">
+						<h2 class="part-1-inner-txt">享受由科学家和游戏设计者开发的脑训练</h2>
+						<h4 class="part-1-inner-txt">从今天开始有50+认识游戏的训练</h4>
+						<p style="text-align: center;margin: 50px auto;"><a type="submit" class="btn btn-primary btn-cog btn-lg pull-center" href="${basePath!}/register">现在就开始</a></p>
+					</div>
+
+				</div>
+
+				<div>
+					<a data-click="scroll-top" href="javascript:;"><h1 style="color: white;text-align: center;cursor: pointer;margin: 0;"><span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></h1></a>
+				</div>
+			</div>
+		</div>
+
+		<div id="part-2">
+			<div class="container" id="part-2-inner">
+				<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+					<!-- Wrapper for slides -->
+					<div class="carousel-inner" role="listbox" id="part-2-inner-carousel">
+						<div class="item active">
+							<img src="${basePath!}/assets/img/index_part_2_step_1.png">
+
+							<h3>1.得到你的基线</h3>
+							<p class="hidden-xs">通过做三个游戏来做一个匹配测试，得到你的基线。看看你和同龄人比起来有什么优势或劣势，然后开始你的训练。</p>
+
+						</div>
+						<div class="item">
+							<img src="${basePath!}/assets/img/index_part_2_step_2.png">
+							<h3>2.完成日常训练</h3>
+							<p class="hidden-xs">一般日常训练就是挑战5个核心的认知技能。游戏会根据你的水平选择合适的挑战层次，让你永远有挑战的感觉。</p>
+						</div>
+						<div class="item">
+							<img src="${basePath!}/assets/img/index_part_2_step_3.png">
+							<h3>3.实时追踪你的分数</h3>
+							<p class="hidden-xs">查看你最擅长的的认知技能，然后把这些分析放入到下一次的训练中。</p>
+						</div>
+					</div>
+					<ol class="carousel-indicators">
+						<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+						<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+						<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+					</ol>
+					<!-- Controls -->
+					<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+						<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
+					</a>
+					<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+						<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div id="part-3">
+			<div class="container" id="part-3-inner">
+				<div class="col-xs-12">
+					<div class="row">
+						<h1 class="part-3-txt">我们把专业的数据测量方式转换为有趣的游戏</h1>
+						<h3 class="part-3-txt-2">这十年来，研究学者给出了一些认知方式来计算人的认知能力。 我们采纳了一些计量标准，融合进我们的游戏，开发了50多个认知训练游戏。</h3>
+					</div>
+					<div class="row">
+						<p class="part-3-img col-xs-12">
+							<img src="${basePath!}/assets/img/index_part_3.png">
+						</p>
+					</div>
+					<div class="row">
+						<div class="col-md-6 col-xs-12">
+							<h3 class="part-3-txt-3">专家学者专门研究这些游戏</h3>
+							<h4 class="part-3-txt-4">我们的专家和我们的设计开发人员并肩作战。他们确保每一个游戏保留了原始的方法的核心机制，旨在测试某个明确的认知技能。</h4>
+						</div>
+						<div class="col-md-6 col-xs-12">
+							<h3 class="part-3-txt-3">游戏设计者现实化</h3>
+							<h4 class="part-3-txt-4">我们的设计师和开发人员不仅添加了令人兴奋的游戏功能和主题， 而且确保每个游戏都是容易理解的，吸引人的，对每个年龄段的人来说都会是一种挑战。</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div id="part-4">
+			<div class="container" id="part-4-inner">
+				<div class="col-xs-12">
+
+					<div class="row">
+						<h1 class="part-4-txt">我们的科学家研究训练认知平台的功效</h1>
+						<h4 class="part-4-txt-2">我们进行了一项随机研究,利用纵横拼字谜作为主动控制。</h4>
+					</div>
+					<div class="row">
+						<p class="part-4-img col-xs-12">
+							<img src="${basePath!}/assets/img/index_part_4.png">
+						</p>
+					</div>
+					<div class="row">
+						<div class="col-md-4 col-xs-12">
+							<h3 class="part-4-txt-3">我们所做的</h3>
+							<h4 class="part-4-txt-4">我们的科学家有4715个参与者完成研究。其余为安慰剂效应做了在线填字游戏来控制。</h4>
+						</div>
+						<div class="col-md-4 col-xs-12">
+							<h3 class="part-4-txt-3">我们发现</h3>
+							<h4 class="part-4-txt-4">10周后将改善超过填字游戏组的总评估认知。</h4>
+						</div>
+						<div class="col-md-4 col-xs-12">
+							<h3 class="part-4-txt-3">下一个问题</h3>
+							<h4 class="part-4-txt-4">这些结果是有前途的，但我们需要做更多的研究来确定改进的评估分数之前的联系和日常任务参与者的生活。这是我们的下一个焦点。</h4>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div id="part-5">
+			<div class="container" id="part-5-inner">
+				<div class="col-xs-12">
+
+					<div class="row">
+						<h1 class="part-5-txt">与我们合作的机构</h1>
+						<h4 class="part-5-txt-2">杭州华泰信息技术有限公司与东南大学学习科学研究中心情感信息处理研究室，北京师范大学脑与认知科学研究所，北京大学IDO麦戈文脑科学研究所，南加州大学，英国赫尔本大学，浙江大学，浙江工业大学等众多国内外知名大学及其研究所建立了良好的合作关系。</h4>
+					</div>
+					<div class="row">
+						<p class="part-5-img col-xs-12">
+							<img src="${basePath!}/assets/img/index_part_5.png">
+						</p>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+
+
+		<#include "/common/bottom.html">
+
+	</div>
+	<!--main content-->
+
+
+
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="${basePath!}/assets/js/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="${basePath!}/assets/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		window.onload=function(){
+			var s_height=$(window).height();
+			var navbar_height=$("#navbar").outerHeight();
+			$("#part-1").height(s_height-navbar_height);
+			$("#part-1").css("margin-top",navbar_height);
+  			// $("#part-2").css("min-height",(s_height-navbar_height)+"px");
+  			
+  			$("[data-click=scroll-top]").click(
+  				function(e){
+  					e.preventDefault();
+  					$("html, body").animate({scrollTop:$("#part-2").offset().top-navbar_height},500)
+  				});
+  			preload_img(1);
+  		}
+  		function preload_img (ii) {
+  			console.log("preload img:"+ii);
+  			var img = new Image(); 
+  			img.src = "${basePath!}/assets/img/banner_"+ii+".png"; 
+  			img.onload = function(){  
+  				if (ii==5) {
+  					$("#part-1").addClass("ani");
+  				}else {
+  					ii=ii+1;
+  					preload_img(ii);
+  				}
+  			}; 
+  		}
+
+
+  	</script>
+  </body>
+  </html>

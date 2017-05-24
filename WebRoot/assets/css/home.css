@@ -1,0 +1,632 @@
+body{
+	font-family: "Museo Sans","Lucida Grande",Arial,sans-serif;
+	color: #333;
+}
+a,a:hover,a:active{
+	text-decoration: none;
+}
+.cols{
+	padding: 0;
+	text-align: center;
+}
+.rows{
+	margin: 0;
+}
+.txt-center{
+	text-align: center;
+}
+.navbar{
+	background-color: #0e91a1;
+	min-height: 70px;
+	border-radius: 0;
+	border: none;
+}
+.navbar > .container-fluid{
+	max-width: 988px;
+	margin: 10px auto;
+}
+.cog-brand{
+	color: white;
+}
+.navbar-collapse{
+	border: none;
+}
+.navbar-nav, .navbar-nav > li{
+	min-width: 80px;
+	text-align:center;
+}
+.navbar-nav > .active >a{
+	border-radius: 5px;
+	margin-top:5px;
+	margin-bottom: 5px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.navbar-right{
+	margin: -10px auto;
+}
+#user_img{
+	width: 40px;
+	height: 100%;
+}
+.dropdown-menu,.dropdown-menu>li>a{
+	text-align: center;
+	color: #146c78;
+}
+.dropdown-menu >li{
+	margin: 10px auto
+}
+
+#part-1{
+	max-width: 988px;
+	margin: 0 auto;
+}
+
+#part-1-1{
+
+}
+.panel-heading{
+	background-color: none;
+	min-height: 80px;
+	padding: 0;
+}
+.panel-heading > div,.panel-heading > div > div{
+	height: 100%;
+}
+.col-days{
+	width: 13%;
+	text-align: center;
+	border: 1px solid rgba(0,0,0,0.1);
+	height: 80px;
+	line-height: 80px;
+	padding: 0;
+}
+.active-days{
+	width: 22%;
+	border-bottom: 5px solid rgba(0,0,0,0.3);
+}
+.part-1-1-title{
+	margin: 10px 0;
+	text-align: center;
+}
+#carousel{
+	text-align: center;
+}
+#carousel >div> img{
+	width: 30%;
+	margin: 5% auto;
+}
+
+#btn-start-row{
+	margin: 10px auto;
+}
+.panel-footer{
+	min-height: 50px
+}
+.panel-footer > p{
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+.bluea,.bluea:hover,.bluea:active{
+	color: #0e91a1;
+	text-decoration: none;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+.panel-footer-right{
+	text-align: center;
+}
+#training-calendar{
+	max-width: 300px
+}
+.head{
+	display: block;
+	min-height: 30px;
+	width: 12%;
+	margin:2px;
+	padding: 0;
+	text-align: center;
+}
+.day{
+	background-color: #4DBCB6;
+	display: block;
+	min-height: 25px;
+	width: 12%;
+	margin:6px 2px;
+	border: 1px solid rgba(0,0,0,0.1);
+}
+
+
+.calendar{
+	max-width: 300px;
+	margin: 0 auto;
+}
+#training-calendar{
+	padding-left: 6%;
+	padding-right: 5%;
+}
+
+#charts{
+	min-height: 250px;
+	max-width: 400px;
+	margin: 0 auto;
+	margin-top: 20px;
+
+}
+#bestcpi,#currentcpi,#scpi,#mcpi,#acpi,#fcpi,#pcpi{
+	color: white;
+	min-width: 40px;
+}
+#bestcpi{
+	background-color: #FCB913;
+}
+#currentcpi{
+	background-color: #009e95;
+}
+#scpi,#mcpi,#acpi,#fcpi,#pcpi{
+	background-color: #4DBCB6;
+}
+
+.chart-h5{
+	margin-top: 3px;
+	margin-bottom: 3px;
+	padding:5px;
+}
+#charts > div >.col-xs-5{
+	padding-right: 0;
+}
+
+/*brain_profile*/
+.list-group-item.active,.list-group-item.active:hover,.list-group-item.active:active,.list-group-item.active:focus{
+	background-color: #888;
+	border-color: #888;
+	border-radius: 5px;
+}
+a.list-group-item{
+	background: none;
+	border: none;
+	color: #0E91A1;
+	border-radius: 5px;
+}
+a.list-group-item:active,a.list-group-item:hover,a.list-group-item:focus{
+	background-color: rgba(0,0,0,0.1);
+}
+#cpi-info > h5{
+	line-height: 150%;
+}
+#brain-profile-compare-a{
+	text-align: left;
+}
+.chart-h5>small{
+	margin-left: 10px;
+	margin-right: 10px;
+}
+#divider{
+	border: 1px solid rgba(0,0,0,0.2);
+	border-left: none;
+	border-right: none;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.brain-profile-charts{
+	margin: 0;
+}
+
+/*brain_profile*/
+
+
+/*training_histroy_1*/
+.training-history-top-btn{
+	margin-bottom: 20px;
+}
+.btn-default.disabled{
+	background-color: #eee;
+}
+
+.training-history-top-btn-1,.training-history-top-btn-1:hover{
+	border-radius: 10px 0px 0px 10px;
+	margin: 0;
+}
+.training-history-top-btn-2,.training-history-top-btn-2:hover{
+	border-radius: 0px 10px 10px 0px;
+	margin: 0;
+}
+.training-history-top-btn-3,.training-history-top-btn-3:hover{
+	border-radius: 10px 0px 0px 10px;
+	margin: 0;
+}
+.training-history-top-btn-4,.training-history-top-btn-4:hover{
+	border-radius: 0px 10px 10px 0px;
+	margin: 0;
+}
+
+.training-history-row-left{
+	text-align: center;
+}
+.training-history-row-left>div>h1{
+	font-size: 50px;
+	color: #bdbdbd;
+	font-weight: bold;
+}
+.training-history-row-middle{
+	padding-right: 0;
+	padding-left: 0;
+	text-align: center;
+	margin-bottom: 40px;
+}
+#training-history-calendar{
+	margin: 0 auto;
+}
+
+.total-times{
+	position: absolute;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	right: -100%;
+	padding-top: 7px;
+	padding-bottom: 7px;
+}
+.total-bar{
+	display: block;
+	background: -webkit-linear-gradient(left, rgba(77,188,182,0.5) ,rgba(77,188,182,1) ); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(right, rgba(77,188,182,0.5),rgba(77,188,182,1)); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(right, rgba(77,188,182,0.5),rgba(77,188,182,1)); /* Firefox 3.6 - 15 */
+    background: linear-gradient(to right, rgba(77,188,182,0.5) ,rgba(77,188,182,1)); /* 标准的语法（必须放在最后） */
+	border-radius: 10px;
+	height: 100%;
+}
+.total-txt{
+	margin:-2px 0;
+	/*position: absolute;
+	right: 0;*/
+}
+.training-history-row{
+	margin: 20px 0;
+	border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+#piecharts{
+	width: 100%;
+}
+#piecharts-bar-sample{
+	text-align: left;
+}
+#piecharts-bar-sample-1{
+	background-color: #F7464A;
+	min-height: 10px;
+	width: 20px;
+	display: inline-block;
+	margin: 0 10px;
+}
+#piecharts-bar-sample-2{
+	background-color: #46BFBD;
+	min-height: 10px;
+	width: 20px;
+	display: inline-block;
+	margin: 0 10px;
+}
+#piecharts-bar-sample-3{
+	background-color: #FDB45C;
+	min-height: 10px;
+	width: 20px;
+	display: inline-block;
+	margin: 0 10px;
+}
+#piecharts-bar-sample-4{
+	background-color: #949FB1;
+	min-height: 10px;
+	width: 20px;
+	display: inline-block;
+	margin: 0 10px;
+}
+#piecharts-bar-sample-5{
+	background-color: #4D5360;
+	min-height: 10px;
+	width: 20px;
+	display: inline-block;
+	margin: 0 10px;
+}
+#piecharts-bar-sample-txt-1,#piecharts-bar-sample-txt-2,#piecharts-bar-sample-txt-3,#piecharts-bar-sample-txt-4,#piecharts-bar-sample-txt-5{
+	display: inline-block;
+	width: auto;
+	margin: 0 20px;
+	font-weight: bold;
+	color: #0E91A1;
+}
+
+.glyphicon-triangle-top.increase{
+	color: #A7C81F;
+	margin: 0 20px;
+	font-size: 80%;
+}
+.glyphicon-triangle-bottom.decrease{
+	color: red;
+	margin: 0 20px;
+	font-size: 80%;
+}
+
+#linecharts-bar-sample-txt-1,#linecharts-bar-sample-txt-2,#linecharts-bar-sample-txt-3,#linecharts-bar-sample-txt-4,#linecharts-bar-sample-txt-5{
+	display: inline-block;
+	width: auto;
+	font-weight: bold;
+	color: #0E91A1;
+	text-align: left;
+}
+
+/*training_histroy_1*/
+
+/*training_histroy_2*/
+#chart-detail{
+	width: 100%;
+}
+/*training_histroy_2*/
+
+
+/*training_histroy_3*/
+#avg-days-per-week{
+	color: #FCB913;
+}
+.days-round-row{
+	text-align: center;
+}
+.days-round{
+	width: 20px;
+	display: inline-block;
+	background-color: #eee;
+	min-height: 20px;
+	border-radius: 100%;
+	margin: 0 2px;
+}
+.days-round.active{
+	background-color: #FCB913;
+}
+#max-continues-days{
+	color: #F98816;
+}
+#best-cpi{
+	color: #4DBCB6;
+}
+
+/*training_histroy_3*/
+
+
+/*compare*/
+
+#compare-head{
+	border-bottom: 1px solid rgba(0,0,0,0.2) ;
+}
+.persons-row{
+	font-size: 0;
+	text-align: center;
+	margin: 5px;
+}
+.persons{
+	display: inline-block;
+	width: 5%;
+	margin: 0;
+	text-align: center;
+}
+.persons>img{
+	width: 70%;
+}
+.matrix{
+	margin-top: 20px;
+}
+
+.part-right{
+	padding: 0;
+}
+
+
+
+
+
+
+
+/*compare*/
+
+
+.calenderhead{
+	min-height: 10px;
+	display: inline-block;
+	min-height: 25px;
+	width: 12%;
+	margin:0 1%;
+	
+}
+.week{
+	width: 100%;
+	padding: 0;
+	font-size: 0;
+	padding:0 1%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	position: relative;
+}
+.days{
+	background-color: #4DBCB6;
+	display: inline-block;
+	min-height: 25px;
+	width: 12%;
+	margin:0 1%;
+	border: 1px solid rgba(0,0,0,0.1);
+	position: relative;
+}
+.firstday{
+	margin-left: 2%
+}
+.noplay{
+	background-color: #e2e2e2!important;
+}
+.old{
+	background-color: white!important;
+}
+#today-arrow{
+	position: absolute;
+	bottom: -22px;
+	width: 100%;
+	left: 0;
+	text-align: center;
+	display: block;
+	color: rgba(0,0,0,0.6);
+}
+.btn-group{
+	padding-right: 0;
+}
+
+/*games*/
+.game-type{
+	border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+.game-type-header{
+	margin: 30px 20px;
+	text-align: left;
+
+}
+.txt-below-game{
+	margin:5px 0;
+}
+.txt-below-game-last{
+	margin-bottom: 40px;
+}
+
+/*games*/
+
+#part-6{
+	background-color: #146c78;
+	min-height: 200px;
+	padding-top: 30px;
+}
+#part-6-inner{
+	max-width: 400px;
+	margin: 0 auto;
+}
+.part-6-inner-a,.part-6-inner-a:hover,.part-6-inner-a:active{
+	color: white;
+	text-align: center;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+/*settings*/
+.setting-row{
+	text-align: left;
+	padding: 10px 10px;
+	border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+.setting-row-headers{
+	margin: 20px 0;
+
+}
+.last-setting-row{
+	border: none;
+}
+
+#settings-userimg{
+	width: 80%;
+	max-width: 150px;
+
+}
+
+.setting-txt-back{
+	text-align: left
+}
+
+/*settings*/
+
+/*payment history*/
+#payment-history-box{
+	border: 1px solid #eee;
+    background: #f6f7f8;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+
+
+/*payment history*/
+
+.update-form{
+	margin-top: 30px;
+}
+
+
+/*update password*/
+.fade{
+	animation:fade 1s;
+	-moz-animation:fade 1s;
+	-webkit-animation:fade 1s;
+	-o-animation:fade 1s;
+}
+@keyframes fade
+{
+from {opacity: 1;}
+to {opacity: 0;}
+}
+
+@-moz-keyframes fade
+{
+from {opacity: 1;}
+to {opacity: 0;}
+}
+
+@-webkit-keyframes fade
+{
+from {opacity: 1;}
+to {opacity: 0;}
+}
+
+@-o-keyframes fade
+{
+from {opacity: 1;}
+to {opacity: 0;}
+}
+
+#alert{
+	position: absolute;
+	width: 100%;
+	z-index: 999;
+	top: 70px;
+	text-align: center;
+}
+
+/*update password*/
+
+/*update personal*/
+#update-personal-img{
+	width: 80px;
+}
+#update-personal-img-row{
+	margin-bottom: 20px;
+}
+/*update personal*/
+/*update preference*/
+#wrap > select{
+	margin: 5px;
+	max-width: 200px;
+}
+#rank-data-txt{
+	visibility: hidden;
+}
+.preference-radio,.preference-checkbox{
+	margin: 0 20px;
+	height: 50px;
+	padding: 15px;
+	background-color: #eee;
+	font-size: 150%;
+}
+.btn-row{
+	margin: 20px 0;
+}
+
+
+/*update preference*/
+
+ 
+
+
+

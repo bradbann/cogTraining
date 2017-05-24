@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+	<title>认知训练平台</title>
+
+	<!-- Bootstrap -->
+	<link href="${basePath!}/assets/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="${basePath!}/assets/css/cog.css">
+
+	
+</head>
+<body>
+	<nav class="navbar navbar-default navbar-fixed-top" id="navbar">
+		<div class="container-fluid" id="navbar-content">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<#if (session["userInfo"])??>
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="${basePath}/home" id="navbar-brand-text">CogTraining</a>
+			</div>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			
+			<#else>
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="${basePath}/index" id="navbar-brand-text">CogTraining</a>
+			</div>
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<form class="navbar-form navbar-right">
+					<a type="submit" class="btn btn-primary btn-cog" href="${basePath!}/register">
+						现在就开始
+					</a>
+					<a type="submit" class="btn btn-inverse btn-cog" id="btn-login" href="${basePath!}/login">
+						登录
+					</a>
+				</form>
+			</div><!-- /.navbar-collapse -->
+			</#if>
+		</div><!-- /.container-fluid -->
+	</nav>
+
+
+
+	<!--main content-->
+	<div id="main-content">
+		<div id="part-1" style="background: none;">
+			<div class="container" id="about-part-1-inner">
+				<div class="row bluebg">
+					<div class="about-content-row">
+						<h3 class="whitetxt" style="margin-top: 10px;">付费信息</h3>
+					</div>
+				</div>
+				<div class="row about-content-row" margin-left:20px>
+					<table border="1" width="500px" height="200px" class="table table-bordered table-hover">
+						
+						<tr class="active">
+							<th class="text-center">套餐</th>
+							<th class="text-center">价格</th>
+							<th class="text-center">是否购买</th>
+						</tr>
+						<tr>
+							<td class="text-center">1个月</td>
+							<td class="text-center">￥25</td>
+							<td class="text-center">
+							<button><a href="${basePath}/order?time=1&price=25">购买</a></button>
+							</td>
+						</tr>
+						<tr>
+							<td class="text-center">3个月</td>
+							<td class="text-center">￥65</td>
+							<td class="text-center"><button><a href="${basePath}/order?time=3&price=65">购买</a></button></td>
+						</tr>
+						<tr>
+							<td class="text-center">1年</td>
+							<td class="text-center">￥188</td>
+							<td class="text-center"><button><a href="${basePath}/order?time=12&price=188">购买</a></button></td>
+						</tr>
+						<tr>
+							<td class="text-center">终身</td>
+							<td class="text-center">￥348</td>
+							<td class="text-center"><button><a href="${basePath}/order?time=0&price=348">购买</a></button></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<#include "/common/bottom.html">
+
+	</div>
+	<!--main content-->
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="${basePath!}/assets/js/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="${basePath!}/assets/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		window.onload=function(){
+			var s_height=$(window).height();
+			var navbar_height=$("#navbar").outerHeight();
+			// $("#part-1").height(s_height-navbar_height);
+			$("#part-1").css("margin-top",navbar_height);
+  			// $("#part-2").css("min-height",(s_height-navbar_height)+"px");
+  			
+  		}
+  	</script>
+  </body>
+  </html>

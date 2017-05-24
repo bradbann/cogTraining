@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+	<title>认知训练平台</title>
+
+	<!-- Bootstrap -->
+	<link href="${basePath!}/assets/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="${basePath!}/assets/css/home.css">
+	
+</head>
+<body style="background-color: #eee">
+	
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand cog-brand" href="#">CogTraining</a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li><a href="${basePath!}/home">主页 </a></li>
+					<li class="active"><a href="${basePath!}/brain_profile">个人数据<span class="sr-only">(current)</span></a></li>
+					<li><a href="${basePath!}/games">游戏</a></li>
+				</ul>
+				
+				<#include "/common/account_nav.html">
+			</div><!-- /.navbar-collapse -->
+		</div><!-- /.container-fluid -->
+	</nav>
+
+
+
+	<div class="main-content">
+		<div id="part-1">
+			<div class="container" style="width: 100%">
+
+				<div class="col-xs-12 cols">
+					<div class="part-left hidden-sm hidden-xs col-md-2" id="part-1-1">
+						<div class="list-group">
+							<a href="${basePath!}/brain_profile" class="list-group-item">概述</a>
+							<a href="${basePath!}/training_history/summaries" 
+								class="list-group-item">训练历史</a>
+							<a href="${basePath!}/comparison" class="list-group-item active">比较情况</a>
+						</div>
+					</div>
+					<div class="dropdown visible-sm visible-xs pull-left">
+						<a class="btn btn-cog dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+							比较情况
+							<span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+							<li><a href="${basePath!}/brain_profile">概述</a></li>
+							<li><a href="${basePath!}/training_history/summaries">训练历史</a></li>
+							<li><a href="${basePath!}/comparison">比较情况</a></li>
+						</ul>
+					</div>
+
+					<div class="part-right col-xs-12 col-md-10">
+
+						<div class="row">
+							<div class="col-xs-12">
+								<div class="panel panel-default">
+
+									<div class="panel-body">
+										<div class="row" id="compare-head">
+											<div class="col-xs-12">
+												<h2>对比情况</h2>
+											</div>
+											
+										</div>
+
+										<div class="row compare-row">
+											<div class="row visible-xs">
+												<div class="col-xs-12">
+													<div class="col-xs-12">
+														<h1 id="cpi-xs"></h1>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-sm-2 hidden-xs">
+													<div class="col-xs-12">
+														<h3>CPI</h3>
+														<h1 id="cpi-lg"></h1>
+														<h3 class=""><small>百分比</small></h3>
+													</div>
+												</div>
+												<div class="col-xs-12 col-sm-10">
+													<div class="col-xs-12">
+														<div class="matrix">
+
+															<div class="persons-row">
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+															</div>
+															<div class="persons-row">
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+															</div>
+															<div class="persons-row">
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+															</div>
+															<div class="persons-row">
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+															</div>
+															<div class="persons-row">
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+																<div class="persons"><img class="cpi-persons"></div>
+															</div>
+
+														</div>
+														<h4><small>通过更多的训练来获得一个更高的百分比。</small></h4>
+														<!-- <a href=""><h4><small class="bluea">百分比意味着什么？</small></h4></a> -->
+													</div>
+												</div>
+											</div>
+											
+
+
+										</div>
+										
+										<div class="row compare-row">
+											<div class="row visible-xs">
+												<div class="col-xs-12">
+													<div class="col-xs-12">
+														<h1 id="s-xs"></h1>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-sm-2 hidden-xs">
+													<div class="col-xs-12">
+														<h3>速度</h3>
+														<h1 id="s-lg"></h1>
+														<h3 class=""><small>百分比</small></h3>
+													</div>
+												</div>
+												<div class="col-xs-12 col-sm-10">
+													<div class="col-sm-7 col-xs-12">
+														<div class="matrix">
+															<div class="persons-row">
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+															</div>
+															<div class="persons-row">
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+															</div>
+															<div class="persons-row">
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+															</div>
+															<div class="persons-row">
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+															</div>
+															<div class="persons-row">
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+																<div class="persons"><img class="s-persons"></div>
+															</div>
+
+														</div>
+
+														<!-- <a href=""><h4><small class="bluea">百分比意味着什么？</small></h4></a> -->
+													</div>
+													<div class="col-sm-5 hidden-xs">
+														<h4><small>您的分数到达这里了！进行速度训练把您的CPI提的更高吧。</small></h4>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="row compare-row">
+											<div class="row visible-xs">
+												<div class="col-xs-12">
+													<div class="col-xs-12">
+														<h1 id="m-xs"></h1>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-sm-2 hidden-xs">
+													<div class="col-xs-12">
+														<h3>记忆力</h3>
+														<h1 id="m-lg"></h1>
+														<h3 class=""><small>百分比</small></h3>
+													</div>
+												</div>
+												<div class="col-xs-12 col-sm-10">
+													<div class="col-sm-7 col-xs-12">
+														<div class="matrix">
+															<div class="persons-row">
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+															</div>
+															<div class="persons-row">
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+															</div>
+															<div class="persons-row">
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+															</div>
+															<div class="persons-row">
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+															</div>
+															<div class="persons-row">
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+																<div class="persons"><img class="m-persons"></div>
+															</div>
+
+														</div>
+
+														<!-- <a href=""><h4><small class="bluea">百分比意味着什么？</small></h4></a> -->
+													</div>
+													<div class="col-sm-5 hidden-xs">
+														<h4><small>您是一个不容小觑的力量，保持住！</small></h4>
+													</div>
+												</div>
+											</div>
+										</div>
+
+
+										<div class="row compare-row">
+											<div class="row visible-xs">
+												<div class="col-xs-12">
+													<div class="col-xs-12">
+														<h1 id="a-xs"></h1>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-sm-2 hidden-xs">
+													<div class="col-xs-12">
+														<h3>注意力</h3>
+														<h1 id="a-lg"></h1>
+														<h3 class=""><small>百分比</small></h3>
+													</div>
+												</div>
+												<div class="col-xs-12 col-sm-10">
+													<div class="col-sm-7 col-xs-12">
+														<div class="matrix">
+															<div class="persons-row">
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+															</div>
+															<div class="persons-row">
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+															</div>
+															<div class="persons-row">
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+															</div>
+															<div class="persons-row">
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+															</div>
+															<div class="persons-row">
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+																<div class="persons"><img class="a-persons"></div>
+															</div>
+
+														</div>
+
+														<!-- <a href=""><h4><small class="bluea">百分比意味着什么？</small></h4></a> -->
+													</div>
+													<div class="col-sm-5 hidden-xs">
+														<h4><small>您是一个不容小觑的力量，保持住！</small></h4>
+													</div>
+												</div>
+											</div>
+										</div>
+
+
+										<div class="row compare-row">
+											<div class="row visible-xs">
+												<div class="col-xs-12">
+													<div class="col-xs-12">
+														<h1 id="f-xs"></h1>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-sm-2 hidden-xs">
+													<div class="col-xs-12">
+														<h3>灵活性</h3>
+														<h1 id="f-lg"></h1>
+														<h3 class=""><small>百分比</small></h3>
+													</div>
+												</div>
+												<div class="col-xs-12 col-sm-10">
+													<div class="col-sm-7 col-xs-12">
+														<div class="matrix">
+															<div class="persons-row">
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+															</div>
+															<div class="persons-row">
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+															</div>
+															<div class="persons-row">
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+															</div>
+															<div class="persons-row">
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+															</div>
+															<div class="persons-row">
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+																<div class="persons"><img class="f-persons"></div>
+															</div>
+
+														</div>
+
+														<!-- <a href=""><h4><small class="bluea">百分比意味着什么？</small></h4></a> -->
+													</div>
+													<div class="col-sm-5 hidden-xs">
+														<h4><small>您是一个不容小觑的力量，保持住！</small></h4>
+													</div>
+												</div>
+											</div>
+										</div>
+
+
+										<div class="row compare-row">
+											<div class="row visible-xs">
+												<div class="col-xs-12">
+													<div class="col-xs-12">
+														<h1 id="p-xs"></h1>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-sm-2 hidden-xs">
+													<div class="col-xs-12">
+														<h3>逻辑</h3>
+														<h1 id="p-lg"></h1>
+														<h3 class=""><small>百分比</small></h3>
+													</div>
+												</div>
+												<div class="col-xs-12 col-sm-10">
+													<div class="col-sm-7 col-xs-12">
+														<div class="matrix">
+															<div class="persons-row">
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+															</div>
+															<div class="persons-row">
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+															</div>
+															<div class="persons-row">
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+															</div>
+															<div class="persons-row">
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+															</div>
+															<div class="persons-row">
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+																<div class="persons"><img class="p-persons"></div>
+															</div>
+
+														</div>
+
+														<!-- <a href=""><h4><small class="bluea">百分比意味着什么？</small></h4></a> -->
+													</div>
+													<div class="col-sm-5 hidden-xs">
+														<h4><small>您是一个不容小觑的力量，保持住！</small></h4>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										
+
+
+									</div>
+									
+									
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<#include "/common/bottom.html">
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="${basePath!}/assets/js/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="${basePath!}/assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="${basePath!}/assets/js/Chart.js"></script>
+
+<script type="text/javascript">
+	function x_to_y (ii) {
+		ii=ii+1;
+		var cc=Math.ceil(ii/5);
+		var rr=ii-parseInt(ii/5)*5;
+		var result=parseInt((rr-1)*20)+parseInt(cc)-1;
+		return result;
+	}
+	window.onload=function(){
+		var s_height=$(window).height();
+		var navbar_height=$("#navbar").outerHeight();
+		$("#part-1").css("min-height",s_height-navbar_height-$("#part-6").outerHeight());
+		$("#part-1").css("margin-top",navbar_height);
+
+		//人头矩阵的初始化 百分比请处理为小数点后三位
+		var cpi_p=${overall?string("0.##")};
+		var s_p=${speed?string("0.##")};
+		var m_p=${memory?string("0.##")};
+		var f_p=${flexibility?string("0.##")};
+		var a_p=${attention?string("0.##")};
+		var p_p=${problem_solving?string("0.##")};
+		console.log(cpi_p);
+		$("#cpi-lg").html(parseInt(cpi_p*1000/10)+'<small>.'+(cpi_p*1000%10)+'</small>');
+		$("#cpi-xs").html('<small>CPI</small> '+parseInt(cpi_p*1000/10)+'<small>.'+(cpi_p*1000%10)+'%</small>');
+		for (var i = 0; i < 100; i++) {
+			if (i<=parseInt(cpi_p*1000/10)-1) {
+				$(".cpi-persons").eq(x_to_y(i)).attr("src","${basePath!}/assets/img/person-"+1+".png");
+			}
+			else if (i==Math.ceil(cpi_p*1000/10)-1) {
+				$(".cpi-persons").eq(x_to_y(i)).attr("src","${basePath!}/assets/img/person-"+2+".png");	
+			}else{
+				$(".cpi-persons").eq(x_to_y(i)).attr("src","${basePath!}/assets/img/person-"+0+".png");	
+			}
+		}
+
+		$("#s-lg").html(parseInt(s_p*1000/10)+'<small>.'+(s_p*1000%10)+'</small>');
+		$("#s-xs").html('<small>速度</small> '+parseInt(s_p*1000/10)+'<small>.'+(s_p*1000%10)+'%</small>');
+		for (var i = 0; i < 100; i++) {
+			if (i<=parseInt(s_p*1000/10)-1) {
+				$(".s-persons").eq(x_to_y(i)).attr("src","${basePath!}/assets/img/person-"+1+".png");
+			}
+			else if (i==Math.ceil(s_p*1000/10)-1) {
+				$(".s-persons").eq(x_to_y(i)).attr("src","${basePath!}/assets/img/person-"+2+".png");	
+			}else{
+				$(".s-persons").eq(x_to_y(i)).attr("src","${basePath!}/assets/img/person-"+0+".png");	
+			}
+		}
+
+		$("#m-lg").html(parseInt(m_p*1000/10)+'<small>.'+(m_p*1000%10)+'</small>');
+		$("#m-xs").html('<small>记忆力</small> '+parseInt(m_p*1000/10)+'<small>.'+(m_p*1000%10)+'%</small>');
+		for (var i = 0; i < 100; i++) {
+			if (i<=parseInt(m_p*1000/10)-1) {
+				$(".m-persons").eq(x_to_y(i)).attr("src","${basePath!}/assets/img/person-"+1+".png");
+			}
+			else if (i==Math.ceil(m_p*1000/10)-1) {
+				$(".m-persons").eq(x_to_y(i)).attr("src","${basePath!}/assets/img/person-"+2+".png");	
+			}else{
+				$(".m-persons").eq(x_to_y(i)).attr("src","${basePath!}/assets/img/person-"+0+".png");	
+			}
+		}
+
+		$("#a-lg").html(parseInt(a_p*1000/10)+'<small>.'+(a_p*1000%10)+'</small>');
+		$("#a-xs").html('<small>注意力</small> '+parseInt(a_p*1000/10)+'<small>.'+(a_p*1000%10)+'%</small>');
+		for (var i = 0; i < 100; i++) {
+			if (i<=parseInt(a_p*1000/10)-1) {
+				$(".a-persons").eq(x_to_y(i)).attr("src","${basePath!}/assets/img/person-"+1+".png");
+			}
+			else if (i==Math.ceil(a_p*1000/10)-1) {
+				$(".a-persons").eq(x_to_y(i)).attr("src","${basePath!}/assets/img/person-"+2+".png");	
+			}else{
+				$(".a-persons").eq(x_to_y(i)).attr("src","${basePath!}/assets/img/person-"+0+".png");	
+			}
+		}
+
+		$("#f-lg").html(parseInt(f_p*1000/10)+'<small>.'+(f_p*1000%10)+'</small>');
+		$("#f-xs").html('<small>灵活性</small> '+parseInt(f_p*1000/10)+'<small>.'+(f_p*1000%10)+'%</small>');
+		for (var i = 0; i < 100; i++) {
+			if (i<=parseInt(f_p*1000/10)-1) {
+				$(".f-persons").eq(x_to_y(i)).attr("src","${basePath!}/assets/img/person-"+1+".png");
+			}
+			else if (i==Math.ceil(f_p*1000/10)-1) {
+				$(".f-persons").eq(x_to_y(i)).attr("src","${basePath!}/assets/img/person-"+2+".png");	
+			}else{
+				$(".f-persons").eq(x_to_y(i)).attr("src","${basePath!}/assets/img/person-"+0+".png");	
+			}
+		}
+
+
+		$("#p-lg").html(parseInt(p_p*1000/10)+'<small>.'+(p_p*1000%10)+'</small>');
+		$("#p-xs").html('<small>逻辑</small> '+parseInt(p_p*1000/10)+'<small>.'+(p_p*1000%10)+'%</small>');
+		for (var i = 0; i < 100; i++) {
+			if (i<=parseInt(p_p*1000/10)-1) {
+				$(".p-persons").eq(x_to_y(i)).attr("src","${basePath!}/assets/img/person-"+1+".png");
+			}
+			else if (i==Math.ceil(p_p*1000/10)-1) {
+				$(".p-persons").eq(x_to_y(i)).attr("src","${basePath!}/assets/img/person-"+2+".png");	
+			}else{
+				$(".p-persons").eq(x_to_y(i)).attr("src","${basePath!}/assets/img/person-"+0+".png");	
+			}
+		}
+	}
+
+</script>
+</body>
+</html>
