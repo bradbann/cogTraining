@@ -1,0 +1,19 @@
+##ignore this file##
+/.settings/
+/WebRoot/WEB-INF/classes/
+/WebRoot/resources/game_re/
+.classpath
+.project
+
+# compression file
+*.7z  
+*.dmg  
+*.gz  
+*.iso  
+*.jar  
+*.rar  
+*.tar  
+*.zip  
+*.via
+*.tmp
+*.err
