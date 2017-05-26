@@ -1,7 +1,6 @@
 ##ignore this file##
 /.settings/
 /WebRoot/WEB-INF/classes/
-/WebRoot/resources/game_re/
 .classpath
 .project
 
