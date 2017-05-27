@@ -35,9 +35,9 @@ public class _JFinalGenerator {
 		// 创建生成器
 		Generator gernerator = new Generator(getDataSource(), baseModelPackageName, baseModelOutputDir, modelPackageName, modelOutputDir);
 		// 添加不需要生成的表名
-		gernerator.addExcludedTable("access_token","agent","app_version","city","dict_data","dict_type","firstorg","price_base"
+		gernerator.addExcludedTable("access_token","agent","app_version","brief","city","dict_data","dict_type","firstorg"
 				,"priceauthor","pricediscount","pricetype","province","seconddept","supplier","sys_log","sys_login_record","sys_res"
-				,"sys_role","sys_role_res","sys_user","sys_user_role","userauthor");
+				,"sys_role","sys_role_res","sys_user","sys_user_role","userauthor","priceauthorpay","priceauthorsub");
 		// 设置是否在 Model 中生成 dao 对象
 		gernerator.setGenerateDaoInModel(true);
 		// 设置是否生成字典文件

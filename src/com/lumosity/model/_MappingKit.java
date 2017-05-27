@@ -20,7 +20,6 @@ public class _MappingKit {
 		arp.addMapping("account", "userId", Account.class);
 		arp.addMapping("brain_class_profile", "profileId", BrainClassProfile.class);
 		arp.addMapping("brain_profile", "userId", BrainProfile.class);
-		arp.addMapping("brief", "briefID", Brief.class);
 		arp.addMapping("comment", "commentId", Comment.class);
 		arp.addMapping("day_class_record", "recordId", DayClassRecord.class);
 		arp.addMapping("day_game_record", "recordId", DayGameRecord.class);
@@ -32,8 +31,7 @@ public class _MappingKit {
 		arp.addMapping("job", "jobId", Job.class);
 		arp.addMapping("order", "orderId", Order.class);
 		arp.addMapping("plan_game", "planGameId", PlanGame.class);
-		arp.addMapping("priceauthorpay", "priceAuthorPayNum", Priceauthorpay.class);
-		arp.addMapping("priceauthorsub", "id", Priceauthorsub.class);
+		arp.addMapping("price_base", "priceBaseId", PriceBase.class);
 		arp.addMapping("question_status", "userId", QuestionStatus.class);
 		arp.addMapping("session", "sessionId", Session.class);
 		arp.addMapping("test_plan", "testId", TestPlan.class);
