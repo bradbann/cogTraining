@@ -199,7 +199,9 @@ public class AuthApiController extends Controller {
 				gameMap.put("bestScore", 0);
 			}
 			String imgPath = "http://120.27.234.232/resources/images/games/" + game.getSmallImg();
+			String padImgPath = "http://120.27.234.232/resources/images/games/" + game.getPadGameImg();
 			gameMap.put("imgPath", imgPath);
+			gameMap.put("padImgPath", padImgPath);
 			gameMap.put("gameOpenCode", jsonStr);
 			gameMap.put("gameId", gameId);
 			gameMap.put("gameName", gameName);
@@ -596,7 +598,7 @@ public class AuthApiController extends Controller {
 				}
 				isLike = userGame.getIsLike();
 			}
-			String imgPath = "http://120.27.234.232/resources/images/games/" + game.getSmallImg();
+			String imgPath = "http://120.27.234.232/resources/images/games/" + game.getPadGameImg();
 			
 			Map<String, Object> turboGame = new HashMap<>();
 			turboGame.put("sequence", testPlan.getSequence());
@@ -657,7 +659,7 @@ public class AuthApiController extends Controller {
 			} else {
 				turboGame.put("bestScore", 0);
 			}
-			String imgPath = "http://120.27.234.232/resources/images/games/" + game.getSmallImg();
+			String imgPath = "http://120.27.234.232/resources/images/games/" + game.getPadGameImg();
 			
 			turboGame.put("sequence", planGame.getSequence());
 			turboGame.put("gameOpenCode", jsonStr);

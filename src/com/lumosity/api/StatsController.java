@@ -253,4 +253,19 @@ public class StatsController extends Controller{
 		
 		render("/apiPages/history_summary.html");
 	}
+	
+	@ActionKey("/api/page/about")
+	public void about() {
+		render("/apiPages/about.html");
+	}
+	
+	@ActionKey("/api/page/legal")
+	public void legal() {
+		render("/apiPages/legal.html");
+	}
+	
+	@ActionKey("/api/page/service")
+	public void service() {
+		render("/apiPages/service.html");
+	}
 }
