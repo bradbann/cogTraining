@@ -18,7 +18,11 @@ public class LPIKit {
 	 * @return
 	 */
 	public static int getLPI(int score){
-		return score/10;
+		
+		int lpi = score/10;
+		if (lpi > 2000) 
+			lpi = 2000;
+		return lpi;
 	}
 	/**
 	 * 获取游戏类型 的LPI,初步算法即取出该游戏类型下所有游戏的日LPI，然后求平均数

@@ -9,20 +9,20 @@ import com.jfinal.plugin.activerecord.IBean;
 @SuppressWarnings("serial")
 public abstract class BaseEducation<M extends BaseEducation<M>> extends Model<M> implements IBean {
 
-	public void setEducationId(java.lang.Integer educationId) {
-		set("educationId", educationId);
+	public void setEduDegreeId(java.lang.Integer eduDegreeId) {
+		set("eduDegreeId", eduDegreeId);
 	}
 
-	public java.lang.Integer getEducationId() {
-		return get("educationId");
+	public java.lang.Integer getEduDegreeId() {
+		return get("eduDegreeId");
 	}
 
-	public void setEducationName(java.lang.String educationName) {
-		set("educationName", educationName);
+	public void setEduDegreeName(java.lang.String eduDegreeName) {
+		set("eduDegreeName", eduDegreeName);
 	}
 
-	public java.lang.String getEducationName() {
-		return get("educationName");
+	public java.lang.String getEduDegreeName() {
+		return get("eduDegreeName");
 	}
 
 }

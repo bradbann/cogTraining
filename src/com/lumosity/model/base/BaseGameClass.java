@@ -41,4 +41,36 @@ public abstract class BaseGameClass<M extends BaseGameClass<M>> extends Model<M>
 		return get("dis");
 	}
 
+	public void setCreateTime(java.util.Date createTime) {
+		set("createTime", createTime);
+	}
+
+	public java.util.Date getCreateTime() {
+		return get("createTime");
+	}
+
+	public void setCreateAdminId(java.lang.Integer createAdminId) {
+		set("createAdminId", createAdminId);
+	}
+
+	public java.lang.Integer getCreateAdminId() {
+		return get("createAdminId");
+	}
+
+	public void setUpdateTime(java.util.Date updateTime) {
+		set("updateTime", updateTime);
+	}
+
+	public java.util.Date getUpdateTime() {
+		return get("updateTime");
+	}
+
+	public void setUpdateAdminId(java.lang.Integer updateAdminId) {
+		set("updateAdminId", updateAdminId);
+	}
+
+	public java.lang.Integer getUpdateAdminId() {
+		return get("updateAdminId");
+	}
+
 }

@@ -66,7 +66,6 @@ public class ComparisonController extends Controller{
 		} else {
 			setAttr("overall", 0);
 		}
-		
 		render("/stats/comparison/compare.html");
 		
 	}

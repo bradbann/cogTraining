@@ -49,4 +49,52 @@ public abstract class BaseTrainPlan<M extends BaseTrainPlan<M>> extends Model<M>
 		return get("week");
 	}
 
+	public void setTrainClassId(java.lang.Integer trainClassId) {
+		set("trainClassId", trainClassId);
+	}
+
+	public java.lang.Integer getTrainClassId() {
+		return get("trainClassId");
+	}
+
+	public void setGameClassId(java.lang.Integer gameClassId) {
+		set("gameClassId", gameClassId);
+	}
+
+	public java.lang.Integer getGameClassId() {
+		return get("gameClassId");
+	}
+
+	public void setCreateAdminId(java.lang.Integer createAdminId) {
+		set("createAdminId", createAdminId);
+	}
+
+	public java.lang.Integer getCreateAdminId() {
+		return get("createAdminId");
+	}
+
+	public void setCreateTime(java.util.Date createTime) {
+		set("createTime", createTime);
+	}
+
+	public java.util.Date getCreateTime() {
+		return get("createTime");
+	}
+
+	public void setUpdateAdminId(java.lang.Integer updateAdminId) {
+		set("updateAdminId", updateAdminId);
+	}
+
+	public java.lang.Integer getUpdateAdminId() {
+		return get("updateAdminId");
+	}
+
+	public void setUpdateTime(java.util.Date updateTime) {
+		set("updateTime", updateTime);
+	}
+
+	public java.util.Date getUpdateTime() {
+		return get("updateTime");
+	}
+
 }

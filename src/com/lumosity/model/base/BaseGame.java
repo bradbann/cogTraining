@@ -81,4 +81,84 @@ public abstract class BaseGame<M extends BaseGame<M>> extends Model<M> implement
 		return get("benefit");
 	}
 
+	public void setBriefID(java.lang.Integer briefID) {
+		set("briefID", briefID);
+	}
+
+	public java.lang.Integer getBriefID() {
+		return get("briefID");
+	}
+
+	public void setGameState(java.lang.Integer gameState) {
+		set("gameState", gameState);
+	}
+
+	public java.lang.Integer getGameState() {
+		return get("gameState");
+	}
+
+	public void setLevel(java.lang.Integer level) {
+		set("level", level);
+	}
+
+	public java.lang.Integer getLevel() {
+		return get("level");
+	}
+
+	public void setGameBeginDate(java.util.Date gameBeginDate) {
+		set("gameBeginDate", gameBeginDate);
+	}
+
+	public java.util.Date getGameBeginDate() {
+		return get("gameBeginDate");
+	}
+
+	public void setGameOperateAdminId(java.lang.Integer gameOperateAdminId) {
+		set("gameOperateAdminId", gameOperateAdminId);
+	}
+
+	public java.lang.Integer getGameOperateAdminId() {
+		return get("gameOperateAdminId");
+	}
+
+	public void setCreateTime(java.util.Date createTime) {
+		set("createTime", createTime);
+	}
+
+	public java.util.Date getCreateTime() {
+		return get("createTime");
+	}
+
+	public void setCreateAdminId(java.lang.Integer createAdminId) {
+		set("createAdminId", createAdminId);
+	}
+
+	public java.lang.Integer getCreateAdminId() {
+		return get("createAdminId");
+	}
+
+	public void setUpdateTime(java.util.Date updateTime) {
+		set("updateTime", updateTime);
+	}
+
+	public java.util.Date getUpdateTime() {
+		return get("updateTime");
+	}
+
+	public void setUpdateAdminId(java.lang.Integer updateAdminId) {
+		set("updateAdminId", updateAdminId);
+	}
+
+	public java.lang.Integer getUpdateAdminId() {
+		return get("updateAdminId");
+	}
+
+	public void setPadGameImg(java.lang.String padGameImg) {
+		set("padGameImg", padGameImg);
+	}
+
+	public java.lang.String getPadGameImg() {
+		return get("padGameImg");
+	}
+
 }

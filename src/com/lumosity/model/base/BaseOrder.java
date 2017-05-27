@@ -49,6 +49,30 @@ public abstract class BaseOrder<M extends BaseOrder<M>> extends Model<M> impleme
 		return get("payPrice");
 	}
 
+	public void setPayType(java.lang.String payType) {
+		set("payType", payType);
+	}
+
+	public java.lang.String getPayType() {
+		return get("payType");
+	}
+
+	public void setPriceBaseId(java.lang.Integer priceBaseId) {
+		set("priceBaseId", priceBaseId);
+	}
+
+	public java.lang.Integer getPriceBaseId() {
+		return get("priceBaseId");
+	}
+
+	public void setIsAuto(java.lang.Integer isAuto) {
+		set("isAuto", isAuto);
+	}
+
+	public java.lang.Integer getIsAuto() {
+		return get("isAuto");
+	}
+
 	public void setStatus(java.lang.Integer status) {
 		set("status", status);
 	}

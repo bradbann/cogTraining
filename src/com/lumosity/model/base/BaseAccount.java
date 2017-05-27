@@ -105,4 +105,60 @@ public abstract class BaseAccount<M extends BaseAccount<M>> extends Model<M> imp
 		return get("weixinId");
 	}
 
+	public void setExpire(java.lang.Long expire) {
+		set("expire", expire);
+	}
+
+	public java.lang.Long getExpire() {
+		return get("expire");
+	}
+
+	public void setRegState(java.lang.Integer regState) {
+		set("regState", regState);
+	}
+
+	public java.lang.Integer getRegState() {
+		return get("regState");
+	}
+
+	public void setProvinceId(java.lang.Integer provinceId) {
+		set("provinceId", provinceId);
+	}
+
+	public java.lang.Integer getProvinceId() {
+		return get("provinceId");
+	}
+
+	public void setCityId(java.lang.Integer cityId) {
+		set("cityId", cityId);
+	}
+
+	public java.lang.Integer getCityId() {
+		return get("cityId");
+	}
+
+	public void setOrgId(java.lang.Integer orgId) {
+		set("orgId", orgId);
+	}
+
+	public java.lang.Integer getOrgId() {
+		return get("orgId");
+	}
+
+	public void setDeptId(java.lang.Integer deptId) {
+		set("deptId", deptId);
+	}
+
+	public java.lang.Integer getDeptId() {
+		return get("deptId");
+	}
+
+	public void setAgented(java.lang.Integer agented) {
+		set("agented", agented);
+	}
+
+	public java.lang.Integer getAgented() {
+		return get("agented");
+	}
+
 }

@@ -89,4 +89,20 @@ public abstract class BaseUserGame<M extends BaseUserGame<M>> extends Model<M> i
 		return get("expire");
 	}
 
+	public void setBestScore(java.lang.Integer bestScore) {
+		set("bestScore", bestScore);
+	}
+
+	public java.lang.Integer getBestScore() {
+		return get("bestScore");
+	}
+
+	public void setBestPlayDate(java.util.Date bestPlayDate) {
+		set("bestPlayDate", bestPlayDate);
+	}
+
+	public java.util.Date getBestPlayDate() {
+		return get("bestPlayDate");
+	}
+
 }
