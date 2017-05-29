@@ -3,10 +3,9 @@ package com.lumosity.login;
 import java.util.UUID;
 
 import com.jfinal.core.Controller;
-import com.jfinal.kit.PropKit;
 import com.jfinal.kit.StrKit;
+import com.jfinal.plugin.ehcache.CacheKit;
 import com.lumosity.model.Account;
-import com.lumosity.utils.EmailKit;
 
 /**
  * 忘记密码控制器
@@ -20,52 +19,52 @@ public class ForgotController extends Controller {
 		render("/forgot.html");
 	}
 	
-	/**
-	 * 发送重置密码申请
-	 */
-	public void doSendEmail() {
-		String email = getPara("email");
+	public void resetPassword() {
 
-		Account account = Account.dao.findByEmail(email);
-		if (account == null) {
-			setAttr("msg","error");
+		String accountInfo = getPara("accountInfo");
+		String code = getPara("code","");
+		
+		if (StrKit.isBlank(accountInfo)) {
+			setAttr("msg", "邮箱或手机号不能为空！");
 			forwardAction("/forgot");
 			return;
 		}
-
-		String mailUUID = UUID.randomUUID().toString();
 		
-//		 配置缓存，15分钟有效
-//		CacheKit.put("FindPasswordByEmail", String.valueOf(account.getUserId()), mailUUID);
-		
-		String content = "<a href=\"http://"
-				+ PropKit.use("email.properties").get("resetHost") 
-				+"/forgot/resetPassword?randCode="+mailUUID+"&userId="+account.getUserId()+"\">"
-				+"访问下面链接即可重置密码</a>";
-		EmailKit.send(email, "cogTraining邮箱找回密码", content);
-		setAttr("message","邮件已发送，请登录邮箱进行验证!");
-		render("/forgot.html");
+		if (!code.equals(CacheKit.get("valiCode", accountInfo))) {
+			setAttr("msg", "无效的验证码！");
+			forwardAction("/forgot");
+		} else {
+			Account account = Account.dao.isAccountExist(accountInfo);
+			Long userId = account.getUserId();
+			String uuid = UUID.randomUUID().toString();
+			CacheKit.put("resetPwdCode", userId, uuid);
+			setAttr("token", uuid);
+			setAttr("userId", userId);
+			setAttr("msg", "doRestPwd");
+			render("/reset_password.html");
+		}
 	}
 	
-	public void resetPassword() {
-		keepPara("randCode","userId");
-		render("/reset_password.html");
 	
-	}
 	public void doResetPassword(){
 		
-//		CacheKit.get("FindPasswordByEmail", getPara("userId")) .equals(getPara("randCode"));
-//		StrKit.notBlank("userId","randCode");
-		String code = getPara("randCode");
 		String password = getPara("password");
-		Integer userId = getParaToInt("userId");
-		
-		if (StrKit.notBlank(code,password)) {
-			Account.dao.findById(userId).set("password", password).update();
+		Long userId = getParaToLong("userId");
+		String token = getPara("token","");
+		if (StrKit.isBlank(password)) {
+			setAttr("msg", "密码不能为空");
 		} else {
-			setAttr("msg", "重置密码失败！请联系管理员！");
+			if (token.equals(CacheKit.get("resetPwdCode", userId))) {
+				//授权成功
+				Account.dao.findById(userId).set("password", password).update();
+				setAttr("msg", "success");
+			} else {
+				setAttr("msg", "授权信息已过期，请重新获取！");
+				forwardAction("/forgot");
+				return;
+			}
 		}
-		setAttr("msg", "success");
+		
 		render("/reset_password.html");
 		
 	}

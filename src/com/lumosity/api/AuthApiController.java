@@ -91,7 +91,6 @@ public class AuthApiController extends Controller {
 		String accountInfo = getPara("accountInfo");
 		String pwd = getPara("password");
 		
-//		Account account = Account.dao.findByEmailAndPwd(email, pwd);
 		Account account = Account.dao.findAccount(accountInfo, pwd);
 		Map<String, Object> loginInfo = new HashMap<>();
 		

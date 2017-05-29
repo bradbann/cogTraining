@@ -1,6 +1,7 @@
 package com.lumosity.register;
 
 import java.util.Date;
+import java.util.regex.Pattern;
 
 import org.apache.commons.lang3.RandomStringUtils;
 
@@ -15,6 +16,9 @@ import com.lumosity.utils.SmsKit;
 
 //@Clear(UrlFilterInterceptor.class)
 public class RegisterController extends Controller{
+	
+	public static final String emailReg = "^([a-zA-Z0-9_\\.\\-])+\\@(([a-zA-Z0-9\\-])+\\.)+([a-zA-Z0-9]{2,4})+$";
+	public static final String phoneReg = "^1[3|4|5|7|8][0-9]{9}$";
 
 	public void index() {
 		render("/register.html");
@@ -25,51 +29,55 @@ public class RegisterController extends Controller{
 //	@Before(RegisterValidator.class)
 	public void save() {
 		
-		String email = getPara("email");
-		String phone = getPara("phone");
-		String password = getPara("password");
-		Account account = null;
-		if (email != null) 
-			account = Account.dao.findByEmail(email);
-		else 
-			account = Account.dao.findByEmail(phone);
+		String accountInfo = getPara("accountInfo");
 		
+		Account account = Account.dao.isAccountExist(accountInfo);
 		if (account != null) {
 			//email或手机号重复，不允许注册
-			setAttr("msg", "error");
+			setAttr("msg", "邮箱或手机号已被注册！请重新输入");
 			forwardAction("/register");
-
-		} else {
-			//email或手机号不重复，允许注册跳转
-			String birthday = getPara("date");
-			Date birth = DateTimeKit.parse(birthday);
-		
-			Account loginInfo = null;
-			
-			if (email != null) {
-				//邮箱注册
-				new Account().set("userName",getPara("userName")).set("email", email).set("createDate", DateTimeKit.getDate())
-					.set("password", password).set("birthday", birth).save();
-				loginInfo = Account.dao.findByEmailAndPwd(email, password);
-			} else {
-				//手机号注册
-				new Account().set("userName",getPara("userName")).set("mobileId", phone).set("createDate", DateTimeKit.getDate())
-				.set("password", password).set("birthday", birth).save();
-				loginInfo = Account.dao.findByPhoneAndPwd(phone, password);
-			}
-			
-			//保存session数据
-			setSessionAttr("userInfo", loginInfo);
-			Long userId = loginInfo.getUserId();
-			//创建适应性训练计划(固定为三种类型游戏)
-			new TestPlan().set("userId", userId).set("gameId", 14).set("sequence", 1).set("isPlay", 0).save();//speed_match
-			new TestPlan().set("userId", userId).set("gameId", 2).set("sequence", 2).set("isPlay", 0).save();//lost_in_migration
-			new TestPlan().set("userId", userId).set("gameId", 7).set("sequence", 3).set("isPlay", 0).save();//memory_matrix
-			//创建用户问卷状态
-			new QuestionStatus().set("userId", userId).set("question1Status", 0).set("question2Status", 0).save();
-			//跳转问卷页面
-			redirect("/question");
+			return;
+		} 
+		//email或手机号不重复，允许注册跳转
+		String code = getPara("code");
+		//验证验证码的有效性
+		if (!code.equals(CacheKit.get("valiCode", accountInfo))) {
+			setAttr("msg", "无效的验证码！");
+			forwardAction("/register");
+			return;
 		}
+		String userName = getPara("userName");
+		String password = getPara("password");
+		Date birth = getParaToDate("date");
+	
+		Account loginInfo = null;
+		
+		if (Pattern.matches(emailReg, accountInfo)) {
+			//邮箱
+			new Account().set("userName", userName).set("email", accountInfo).set("createDate", DateTimeKit.getDate())
+				.set("password", password).set("birthday", birth).save();
+			loginInfo = Account.dao.findByEmailAndPwd(accountInfo, password);
+		} else if (Pattern.matches(phoneReg, accountInfo)) {
+			//手机
+			new Account().set("userName", userName).set("mobileId", accountInfo).set("createDate", DateTimeKit.getDate())
+				.set("password", password).set("birthday", birth).save();
+			loginInfo = Account.dao.findByPhoneAndPwd(accountInfo, password);
+		} else {
+			//非法输入
+			setAttr("msg", "你输入的邮箱或者手机号非法！请重新输入");
+			return;
+		}
+		//保存session数据
+		setSessionAttr("userInfo", loginInfo);
+		Long userId = loginInfo.getUserId();
+		//创建适应性训练计划(固定为三种类型游戏)
+		new TestPlan().set("userId", userId).set("gameId", 14).set("sequence", 1).set("isPlay", 0).save();//speed_match
+		new TestPlan().set("userId", userId).set("gameId", 2).set("sequence", 2).set("isPlay", 0).save();//lost_in_migration
+		new TestPlan().set("userId", userId).set("gameId", 7).set("sequence", 3).set("isPlay", 0).save();//memory_matrix
+		//创建用户问卷状态
+		new QuestionStatus().set("userId", userId).set("question1Status", 0).set("question2Status", 0).save();
+		//跳转问卷页面
+		redirect("/question");
 	}
 	
 	/**

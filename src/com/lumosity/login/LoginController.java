@@ -30,8 +30,11 @@ public class LoginController extends Controller{
 	@Before(LoginValidator.class)
 	public void doLogin(){
 		//根据用户名密码查找用户
-		Account account = Account.dao.findByEmailAndPwd(getPara("email"), getPara("password"));
+		String accountInfo = getPara("accountInfo");
+		String pwd = getPara("password");
 		boolean keepLogin = getParaToBoolean("remember", false);
+		
+		Account account = Account.dao.findAccount(accountInfo, pwd);
 		
 		if (account != null) {
 			//找到用户
@@ -53,7 +56,7 @@ public class LoginController extends Controller{
 			redirect("/home");
 		} else {
 			//用户不存在
-			setAttr("msg", "error");
+			setAttr("msg", "账号或密码错误！请重新输入");
 			forwardAction("/login");
 		}
 		

@@ -42,6 +42,14 @@
            timeToLiveSeconds="300"
            overflowToDisk="false">
     </cache>
+    
+    <cache name="resetPwdCode"
+		   maxEntriesLocalHeap="10000"
+		   eternal="false"
+		   timeToIdleSeconds="300"
+           timeToLiveSeconds="300"
+           overflowToDisk="false">
+    </cache>
 
 
 </ehcache>

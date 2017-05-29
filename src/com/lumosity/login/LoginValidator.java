@@ -14,8 +14,8 @@ public class LoginValidator extends Validator{
 	@Override
 	protected void validate(Controller c) {
 		
-		validateRequiredString("email", "emailMsg", "请输入用户名!");
-		validateRequiredString("password", "pwdMsg", "请输入密码!");
+		validateRequiredString("accountInfo", "msg", "请输入用户名!");
+		validateRequiredString("password", "msg", "请输入密码!");
 		
 	}
 

@@ -23,14 +23,6 @@ public class UrlFilterInterceptor implements Interceptor{
 		Account account = c.getSessionAttr("userInfo");
 		String controllerKey = inv.getControllerKey();
 		
-		Long userId = (long) 0;
-		if (account != null) {
-			userId = account.getUserId();
-		} else {
-		    userId = c.getParaToLong("userId");
-			account = Account.dao.findById(userId);
-		}
-		
 		if (account == null) {
 			//用户没有登录，跳转登录页面，一些特殊页面需要放行
 			if ("/index".equals(controllerKey) || "/".equals(controllerKey) || "/register".equals(controllerKey)
