@@ -7,236 +7,191 @@
 	<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
 	<title>认知训练平台</title>
 	<!-- Bootstrap -->
-	<link href="${basePath!}/assets/css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="${basePath!}/assets/css/login.css">
-  <link rel="stylesheet" type="text/css" href="${basePath!}/assets/css/bootstrap-datetimepicker.min.css">
+	<link href="${basePath}/assets/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="${basePath}/assets/css/login.css">
+  <link rel="stylesheet" type="text/css" href="${basePath}/assets/css/bootstrap-datetimepicker.min.css">
 </head>
 <body style="background-color: #eee">
- <nav class="navbar navbar-default" id="navbar">
-  <div class="container-fluid" id="navbar-content">
+  <nav class="navbar navbar-default" id="navbar">
+    <div class="container-fluid" id="navbar-content">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+         <span class="sr-only">Toggle navigation</span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index" id="navbar-brand-text">CogTraining</a>
+      </div>
 
-   <div class="navbar-header">
-    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-     <span class="sr-only">Toggle navigation</span>
-     <span class="icon-bar"></span>
-     <span class="icon-bar"></span>
-     <span class="icon-bar"></span>
-    </button>
-   <a class="navbar-brand" href="${basePath!}/index" id="navbar-brand-text">CogTraining</a>
- </div>
-
- <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
-  <form class="navbar-form navbar-right">
-   <span>不是会员？</span>
-   <a type="submit" class="btn btn-inverse btn-cog" id="btn-login" href="${basePath!}/register">创建账户</a>
- </form>
-
-</div><!-- /.navbar-collapse -->
-</div><!-- /.container-fluid -->
-</nav>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <form class="navbar-form navbar-right">
+          <span>不是会员？</span>
+          <a type="submit" class="btn btn-inverse btn-cog" id="btn-login" href="register">创建账户</a>
+        </form>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
 
   <div class="alert alert-danger alert-dismissible hidden" role="alert" id="alert">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close" >
     <span aria-hidden="true">&times;</span></button>
     <strong>用户名或密码错误!</strong>
   </div>
 
-
-
-
 <!--main content-->
-<div id="main-content">
-  <div class="login-box">
-   <div class="container" id="login-form">
-
-    <div class="panel panel-default">
-      <div class="panel-body">
-        <h1 class="login-form-brand">账户登录</h1>
-
-        <ul class="nav nav-tabs tab-choose">
-          <li class="tab-choose-item tab-choose-item-email col-xs-6 active ">
-            <!-- <a href="#panel-622629" data-toggle="tab">邮箱登录</a> -->
-            <!-- <button id="login_email">邮箱登录</button> -->
-            <a role="button">邮箱登录</a>
-          </li>
-          <li class="tab-choose-item tab-choose-item-mobile col-xs-6">
-            <!-- <a href="#panel-90171" data-toggle="tab">手机登录</a> -->
-            <!-- <button id="login_mobile">手机登录</button> -->
-             <a role="button">邮箱登录</a>
-          </li>
-        </ul>
-
-        <form class="form-group col-xs-12" id="defaultForm" action="${basePath!}/login/doLogin" 
-        method="post">
-
-          <div class="form-group">
-            <div class="input-group" data-toggle="popover" data-trigger="focus" data-content="请输入正确的邮箱，如example@example.com，不能为空" id="email_hint" data-placement="top">
-              <div class="input-group-addon">
-                <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+  <div id="main-content">
+    <div class="login-box">
+      <div class="container" id="login-form">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <h1 class="login-form-brand">账户登录</h1>
+            <form class="form-group col-xs-12" id="defaultForm" action="${basePath!}/login/doLogin" method="post">
+              <div class="form-group">
+                <div class="input-group" data-toggle="popover" data-trigger="focus" data-content="请输入正确的邮箱，如example@example.com，或者正确的11位手机号，不能为空" id="email_hint" data-placement="top">
+                  <div class="input-group-addon">
+                    <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+                  </div>
+                  <input type="email" class="form-control middle-input" placeholder="请输入邮箱或手机号" id="email" name="accountInfo">
+                  <div class="input-group-addon">
+                    <span class="glyphicon glyphicon-ok opacity_0" aria-hidden="true" id="hint_2"></span>
+                  </div>
+                </div> 
               </div>
-              <input type="email" class="form-control middle-input" placeholder="请输入邮箱" id="email" value="" name="email">
-              <div class="input-group-addon">
-                <span class="glyphicon glyphicon-ok opacity_0" aria-hidden="true" id="hint_2"></span>
-              </div>
-            </div> 
-          </div>
 
-          <div class="form-group">
-            <div class="input-group" data-toggle="popover" data-trigger="focus" data-content="请输入正确的11位手机号，不能为空" id="mobile_hint" data-placement="top">
-              <div class="input-group-addon">
-                <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>
-              </div>
-              <input class="form-control middle-input" placeholder="请输入手机号" onblur="checkmobile()" id="mobile" name="phone" value="">
-              <div class="input-group-addon">
-                <span class="glyphicon glyphicon-ok opacity_0" aria-hidden="true" id="hint_2-1"></span>
-              </div>
-            </div> 
-          </div>
-
-          <div class="form-group">
-            <div class="input-group" data-toggle="popover" data-trigger="focus" data-content="以字母开头，长度在6~18之间，只能包含字母、数字和下划线" id="password_hint" data-placement="top">
-              <div class="input-group-addon">
-                <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
-              </div>
-              <input type="password" class="form-control middle-input" placeholder="请输入密码" id="password" value="" name="password">
-              <div class="input-group-addon">
-                <span class="glyphicon glyphicon-ok opacity_0" aria-hidden="true" id="hint_3"></span>
-              </div>
-            </div>
-          </div>
-          
-          <div class="form-group">
-            <div class="input-group">
-              <div class="col-xs-12">
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox" name="remember" value="true" id="agreed">记住我 
-                  </label>
+              <div class="form-group">
+                <div class="input-group" data-toggle="popover" data-trigger="focus" data-content="以字母开头，长度在6~18之间，只能包含字母、数字和下划线" id="password_hint" data-placement="top">
+                  <div class="input-group-addon">
+                    <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
+                  </div>
+                  <input type="password" class="form-control middle-input" placeholder="请输入密码" id="password" name="password">
+                  <div class="input-group-addon">
+                    <span class="glyphicon glyphicon-ok opacity_0" aria-hidden="true" id="hint_3"></span>
+                  </div>
                 </div>
               </div>
-            </div>
+            
+              <div class="form-group">
+                <div class="input-group">
+                  <div class="col-xs-12">
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" name="remember" value="true" id="agreed">记住我 
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <button class="btn btn-cog btn-primary btn-block" type="submit" id="submit" >登录</button> 
+              </div>
+
+              <div class="form-group">
+                <a href="${basePath}/forgot" class="pull-right"><o>忘记密码？</o></a> 
+              </div>
+            </form>
+
           </div>
-
-          <div class="form-group">
-            <button class="btn btn-cog btn-primary btn-block" type="submit" id="submit" >登录</button> 
-          </div>
-
-          <div class="form-group">
-            <a href="${basePath!}/forgot" class="pull-right"><o>忘记密码？</o></a> 
-          </div>
-
-        </form>
-
+        </div>
       </div>
     </div>
+    <#include "/common/bottom.html">
   </div>
-</div>
-<#include "/common/bottom.html">
-
-<script src="${basePath!}/assets/js/jquery.min.js"></script>
-<script src="${basePath!}/assets/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="${basePath!}/assets/js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
-<script type="text/javascript" src="${basePath!}/assets/js/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+  <script src="${basePath}/assets/js/jquery.min.js"></script>
+  <script src="${basePath}/assets/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="${basePath}/assets/js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+  <script type="text/javascript" src="${basePath}/assets/js/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
 
 
-<script type="text/javascript">
+  <script type="text/javascript">
   
-  var ok_mobile=0;
-  var ok_2=0;
-  var ok_3=0;
- 
-  window.onload=function(){
-    var s_height=$(window).height();
-    var navbar_height=$("#navbar").outerHeight();
-    $(".login-box").css("min-height",s_height-navbar_height-$("#part-6").outerHeight());
-    $(".form_date").removeClass("date").removeClass("form_date");
-    $('#name_hint').popover();
-    $('#email_hint').popover();
-    $('#password_hint').popover();
-  }
-  function show_content (ii) {
-    $("#content_1").addClass("hidden");
-    $("#content_2").addClass("hidden");
-    $("#content_3").addClass("hidden");
-    $("#content_"+ii).removeClass("hidden");
-  }
-  
-  function checkemail () {
-    var filter_2=/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-    var tmp=$("#email").val();
-    if(filter_2.test(tmp)){
-      ok_2=1;
-      check_true("#hint_2");
-      check_all_right();
+    var ok_2=0;
+    var ok_3=0;
+   
+    window.onload=function(){
+      var s_height=$(window).height();
+      var navbar_height=$("#navbar").outerHeight();
+      $(".login-box").css("min-height",s_height-navbar_height-$("#part-6").outerHeight());
+      $(".form_date").removeClass("date").removeClass("form_date");
+      $('#name_hint').popover();
+      $('#email_hint').popover();
+      $('#password_hint').popover();
+      var msg = "${msg!'success'}";
+      if (msg != "success") {
+        //注册失败
+        $("#alert strong").text(msg);
+        $("#alert").removeClass('hidden');
+      }
     }
-    else{
-      ok_2=0;
-      check_false("#hint_2");
-      check_all_right();
+    function show_content (ii) {
+      $("#content_1").addClass("hidden");
+      $("#content_2").addClass("hidden");
+      $("#content_3").addClass("hidden");
+      $("#content_"+ii).removeClass("hidden");
     }
-  }
+    
+    function checkemail () {
+      var filter_2=/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+      var tmp=$("#email").val();
+      if(filter_2.test(tmp)){
+        ok_2=1;
+        check_true("#hint_2");
+        check_all_right();
+      }else{
+        ok_2=0;
+        check_false("#hint_2");
+        check_all_right();
+      }
+    }
 
-  function checkpassword () {
-    var filter_3=/^[a-zA-Z]\w{5,17}$/;
-    var tmp=$("#password").val();
-    if(filter_3.test(tmp)){
-      ok_3=1;
-      check_true("#hint_3");
-      check_all_right();
+    function checkpassword () {
+      var filter_3=/^[a-zA-Z]\w{5,17}$/;
+      var tmp=$("#password").val();
+      if(filter_3.test(tmp)){
+        ok_3=1;
+        check_true("#hint_3");
+        check_all_right();
+      }else{
+        ok_3=0;
+        check_false("#hint_3");
+        check_all_right();
+      }
     }
-    else{
-      ok_3=0;
-      check_false("#hint_3");
-      check_all_right();
+    
+    function check_false (str) {
+      $(str).removeClass("opacity_0");
+      $(str).removeClass("glyphicon-ok");
+      $(str).removeClass("glyphicon-remove");
+      $(str).addClass("glyphicon-remove");
     }
-  }
-  
-  function check_false (str) {
-    $(str).removeClass("opacity_0");
-    $(str).removeClass("glyphicon-ok");
-    $(str).removeClass("glyphicon-remove");
-    $(str).addClass("glyphicon-remove");
-  }
-  function check_true (str) {
-    $(str).removeClass("opacity_0");
-    $(str).removeClass("glyphicon-ok");
-    $(str).removeClass("glyphicon-remove");
-    $(str).addClass("glyphicon-ok");
-  }
-  function check_all_right () {
-    console.log('check_all_right');
-    if (ok_2==1 && ok_3==1) {
-      $("#submit").attr("disabled",false);
+    function check_true (str) {
+      $(str).removeClass("opacity_0");
+      $(str).removeClass("glyphicon-ok");
+      $(str).removeClass("glyphicon-remove");
+      $(str).addClass("glyphicon-ok");
     }
-    else{
-      $("#submit").attr("disabled",true);
+    function check_all_right () {
+      if (ok_2==1 && ok_3==1) {
+        $("#submit").attr("disabled",false);
+      }else{
+        $("#submit").attr("disabled",true);
+      }
     }
-  }
-  $(document).ready(function() {
-    var error_msg = "${msg!'noerror'}";
-    if (error_msg == "noerror") {
-     console.log("noerror");
-    } else {
-      $("#alert").removeClass('hidden');
-      console.log("error");
-    }
-  });
-  
-</script>
-<script type="text/javascript">
+  </script>
+  <script type="text/javascript">
 
-  $('.form_date').datetimepicker({
-    language:  'zh-CN',
-    weekStart: 1,
-    todayBtn:  1,
-    autoclose: 1,
-    todayHighlight: 1,
-    startView: 2,
-    minView: 2,
-    forceParse: 0
-  });
-
-</script>
+    $('.form_date').datetimepicker({
+      language:  'zh-CN',
+      weekStart: 1,
+      todayBtn:  1,
+      autoclose: 1,
+      todayHighlight: 1,
+      startView: 2,
+      minView: 2,
+      forceParse: 0
+    });
+  </script>
 </body>
 </html>
+
